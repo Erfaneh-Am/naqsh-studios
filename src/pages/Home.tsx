@@ -35,21 +35,11 @@ export default function Home() {
             <span className="text-accent/90 italic">Speaks in Wood</span>
           </motion.h1>
 
-          <motion.div
-            className="-my-12 md:-my-16"
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.1, delay: 0.5 }}
-          >
-            {/* <img
-              src={logoDark}
-              alt="Naqsh Studios"
-              className="h-[26rem] md:h-[32rem] w-auto object-contain drop-shadow-lg"
-            /> */}
-          </motion.div>
+          {/* Hero logo removed per request. To restore it, drop an
+              <img src={logoDark} ... /> back inside a motion.div here. */}
 
           <motion.p
-            className="text-sm md:text-base font-sans font-light tracking-[0.1em] text-background/70 max-w-xl -mt-8 md:-mt-12 mb-6 leading-relaxed"
+            className="text-sm md:text-base font-sans font-light tracking-[0.1em] text-background/70 max-w-xl mt-6 mb-6 leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
