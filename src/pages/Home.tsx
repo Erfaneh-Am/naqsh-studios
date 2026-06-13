@@ -41,7 +41,7 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.1, delay: 0.5 }}
           >
-            <img
+            {/* <img
               src={logoDark}
               alt="Naqsh Studios"
               className="h-[26rem] md:h-[32rem] w-auto object-contain drop-shadow-lg"
@@ -52,7 +52,7 @@ export default function Home() {
             className="text-sm md:text-base font-sans font-light tracking-[0.1em] text-background/70 max-w-xl -mt-8 md:-mt-12 mb-6 leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
+            transition={{ duration: 1, delay: 1 }} */}
           >
             Contemporary wooden artworks inspired by heritage,<br />craftsmanship, and meaningful design.
           </motion.p>
