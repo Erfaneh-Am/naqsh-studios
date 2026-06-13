@@ -7,7 +7,7 @@ import { pieces } from "@/data/pieces";
 import arcadeImg from "@assets/arcade_1781333629648.png";
 import delImg from "@assets/EF6BD3BA-F69A-4E6D-919D-359F3307C5A5_1781372629100.png";
 import studioImg from "@assets/ChatGPT_Image_May_23,_2026,_11_17_58_PM_1781333693723.png";
-import logoImg from "@assets/ChatGPT_Image_May_23,_2026,_10_56_08_PM_1781333693722.png";
+import logoDark from "@assets/logo-dark.png";
 
 export default function Home() {
   return (
@@ -42,9 +42,9 @@ export default function Home() {
             transition={{ duration: 1.1, delay: 0.5 }}
           >
             <img
-              src={logoImg}
+              src={logoDark}
               alt="Naqsh Studios"
-              className="h-[26rem] md:h-[32rem] w-auto object-contain brightness-0 invert drop-shadow-lg"
+              className="h-[26rem] md:h-[32rem] w-auto object-contain drop-shadow-lg"
             />
           </motion.div>
 

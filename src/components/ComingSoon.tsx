@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import logoImg from "@assets/ChatGPT_Image_May_23,_2026,_10_56_08_PM_1781333693722.png";
+import logoDark from "@assets/logo-dark.png";
 
 export default function ComingSoon() {
   return (
@@ -13,9 +13,9 @@ export default function ComingSoon() {
         transition={{ duration: 1 }}
       >
         <img
-          src={logoImg}
+          src={logoDark}
           alt="Naqsh Studios"
-          className="h-[28rem] md:h-[36rem] w-auto object-contain brightness-0 invert drop-shadow-lg mb-10"
+          className="h-[28rem] md:h-[36rem] w-auto object-contain drop-shadow-lg mb-10"
         />
 
         <span className="font-smallcaps text-accent tracking-[0.35em] text-base md:text-lg uppercase mb-6">

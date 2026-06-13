@@ -5,6 +5,7 @@ import { motion, useScroll, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { slugify } from "@/data/pieces";
 import logoImg from "@assets/ChatGPT_Image_May_23,_2026,_10_56_08_PM_1781333693722.png";
+import logoDark from "@assets/logo-dark.png";
 
 const categories = [
   {
@@ -62,9 +63,9 @@ export default function Navbar() {
         <div className="flex-1">
           <Link href="/" className="block" data-testid="link-logo">
             <img
-              src={logoImg}
+              src={transparent ? logoDark : logoImg}
               alt="Naqsh Studios"
-              className={`w-auto object-contain transition-all duration-300 ${transparent ? "h-40 brightness-0 invert" : "h-12"}`}
+              className={`w-auto object-contain transition-all duration-300 ${transparent ? "h-40" : "h-12"}`}
             />
           </Link>
         </div>
