@@ -20,60 +20,59 @@ export default function Home() {
             alt="Layered wooden wall art — Del, Poetry Collection" 
             className="w-full h-full object-cover opacity-50 mix-blend-overlay"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/70 to-transparent" />
+          <div className="absolute inset-0 bg-foreground/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-foreground/40 via-transparent to-foreground/70" />
         </div>
         
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-20">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 pt-20 flex flex-col items-center text-center">
+          <motion.h1
+            className="text-5xl md:text-6xl lg:text-7xl font-serif font-light leading-[1.1] tracking-widest mb-10 text-background"
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, staggerChildren: 0.2 }}
-            className="max-w-3xl"
+            transition={{ duration: 1, delay: 0.1 }}
           >
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.1 }}
-              className="mb-8"
-            >
-              <img src={logoImg} alt="Naqsh Studios" className="h-20 w-auto object-contain brightness-0 invert" />
-            </motion.div>
+            Where Silence<br />
+            <span className="text-accent/90 italic">Speaks in Wood</span>
+          </motion.h1>
 
-            <motion.h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-[1.1] tracking-widest mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.1, delay: 0.5 }}
+            className="my-4"
+          >
+            <img
+              src={logoImg}
+              alt="Naqsh Studios"
+              className="h-36 md:h-44 w-auto object-contain brightness-0 invert drop-shadow-lg"
+            />
+          </motion.div>
+
+          <motion.p
+            className="text-base md:text-lg font-sans font-light tracking-[0.12em] text-background/70 max-w-lg mt-8 mb-12 leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+          >
+            Contemporary wooden artworks inspired by heritage,<br className="hidden sm:block" /> craftsmanship, and meaningful design.
+          </motion.p>
+
+          <motion.div
+            className="flex flex-col sm:flex-row gap-5 items-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.3 }}
+          >
+            <Button
+              variant="outline"
+              className="rounded-none border border-accent text-accent hover:bg-accent hover:text-foreground uppercase tracking-widest text-sm h-14 px-10"
+              data-testid="button-shop-collection"
             >
-              Where Silence<br />
-              <span className="text-accent/90 italic">Speaks in Wood</span>
-            </motion.h1>
-            
-            <motion.p 
-              className="text-lg md:text-xl font-sans font-light tracking-wide text-background/80 max-w-xl mb-12 leading-relaxed"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.8 }}
-            >
-              Contemporary wooden artworks inspired by heritage, craftsmanship, and meaningful design.
-            </motion.p>
-            
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-6 items-start sm:items-center"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1.2 }}
-            >
-              <Button 
-                variant="outline" 
-                className="rounded-none border border-accent text-accent hover:bg-accent hover:text-foreground uppercase tracking-widest text-sm h-14 px-8"
-              >
-                Shop Collection
-              </Button>
-              <Link href="/about" className="group flex items-center text-sm uppercase tracking-widest font-medium text-background/90 hover:text-accent transition-colors">
-                Our Story <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
+              Shop Collection
+            </Button>
+            <Link href="/about" className="group flex items-center text-sm uppercase tracking-widest font-medium text-background/70 hover:text-accent transition-colors" data-testid="link-our-story">
+              Our Story <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </motion.div>
         </div>
         
