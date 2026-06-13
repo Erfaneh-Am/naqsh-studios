@@ -21,7 +21,7 @@ export default function Footer() {
         
         <nav className="flex-1 flex justify-center space-x-6 text-sm uppercase tracking-widest text-muted-foreground">
           <Link href="/collections" className="hover:text-foreground transition-colors">
-            Collections
+            Shop
           </Link>
           <Link href="/about" className="hover:text-foreground transition-colors">
             Our Story
