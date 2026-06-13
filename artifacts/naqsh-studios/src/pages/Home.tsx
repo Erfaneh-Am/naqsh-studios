@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button";
 import arcadeImg from "@assets/arcade_1781333629648.png";
 import heechImg from "@assets/heech_1781333629653.png";
 import sarvImg from "@assets/sarv_1781333629654.png";
-import delImg from "@assets/1794E90A-86B1-485A-97EA-64DEF8266FAE_1781333649082.png";
+import delImg from "@assets/EF6BD3BA-F69A-4E6D-919D-359F3307C5A5_1781372629100.png";
 import studioImg from "@assets/ChatGPT_Image_May_23,_2026,_11_17_58_PM_1781333693723.png";
+import logoImg from "@assets/ChatGPT_Image_May_23,_2026,_10_56_08_PM_1781333693722.png";
 
 export default function Home() {
   return (
@@ -29,8 +30,17 @@ export default function Home() {
             transition={{ duration: 1.2, staggerChildren: 0.2 }}
             className="max-w-3xl"
           >
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.1 }}
+              className="mb-8"
+            >
+              <img src={logoImg} alt="Naqsh Studios" className="h-20 w-auto object-contain brightness-0 invert" />
+            </motion.div>
+
             <motion.h1 
-              className="text-7xl md:text-8xl lg:text-9xl font-serif font-light leading-[0.9] tracking-widest mb-8"
+              className="text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-[1.1] tracking-widest mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
@@ -183,6 +193,78 @@ export default function Home() {
 
       <div className="w-full h-px bg-accent/20" />
 
+      {/* Categories + Collections Directory */}
+      <section className="py-24 px-6 bg-background">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="mb-16"
+          >
+            <span className="font-sans text-xs uppercase tracking-[0.3em] text-accent block mb-4">Browse</span>
+            <h2 className="text-3xl md:text-4xl font-serif font-light text-foreground">Our Collections</h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-12">
+            {[
+              {
+                category: "Wall Sculptures",
+                desc: "Dimensional wooden artworks for your walls",
+                collections: ["Architecture Collection", "Poetry Collection", "Roots Collection"]
+              },
+              {
+                category: "Lamps",
+                desc: "Light sculpted by hand and heritage",
+                collections: ["Ambient Series", "Pendant Collection"]
+              },
+              {
+                category: "Mirrors",
+                desc: "Reflections framed in crafted wood",
+                collections: ["Arch Series", "Geometric Frames"]
+              },
+              {
+                category: "Clocks",
+                desc: "Time rendered as a decorative object",
+                collections: ["Wall Clocks", "Table Clocks"]
+              },
+              {
+                category: "Home Decors",
+                desc: "Objects that complete a considered space",
+                collections: ["Tabletop Objects", "Shelf Sculptures"]
+              }
+            ].map((cat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="group"
+                data-testid={`category-${cat.category.toLowerCase().replace(/\s+/g, '-')}`}
+              >
+                <div className="w-8 h-px bg-accent mb-5" />
+                <Link href="/collections" className="block">
+                  <h3 className="font-serif text-xl text-foreground mb-2 group-hover:text-accent transition-colors">{cat.category}</h3>
+                  <p className="font-sans text-sm font-light text-muted-foreground mb-5 leading-relaxed">{cat.desc}</p>
+                  <ul className="space-y-2">
+                    {cat.collections.map((col, j) => (
+                      <li key={j} className="flex items-center gap-2 text-xs font-sans uppercase tracking-[0.15em] text-muted-foreground hover:text-accent transition-colors cursor-pointer">
+                        <span className="w-3 h-px bg-accent/40 inline-block" />
+                        {col}
+                      </li>
+                    ))}
+                  </ul>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="w-full h-px bg-accent/20" />
+
       {/* 4. Signature Pieces */}
       <section className="py-32 bg-card">
         <div className="max-w-7xl mx-auto px-6">
@@ -256,55 +338,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Craftsmanship Journey */}
-      <section className="py-32 px-6 max-w-5xl mx-auto relative">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="mb-24 text-center"
-        >
-          <h2 className="text-4xl md:text-5xl font-serif font-light text-foreground">
-            The Making
-          </h2>
-        </motion.div>
-
-        <div className="relative border-l border-accent/30 ml-4 md:ml-0 md:border-l-0">
-          <div className="hidden md:block absolute top-1/2 left-0 w-full h-px bg-accent/30 -translate-y-1/2" />
-          
-          <div className="flex flex-col md:flex-row justify-between gap-12 md:gap-4">
-            {[
-              { num: "01", title: "Design", desc: "Every piece begins as a sketch rooted in architectural heritage." },
-              { num: "02", title: "Cutting", desc: "Precision cutting of up to 12 layers of premium wood." },
-              { num: "03", title: "Layering", desc: "Each stratum assembled by hand, creating depth and shadow." },
-              { num: "04", title: "Finishing", desc: "Sanded, stained, sealed — a week of patient refinement." },
-              { num: "05", title: "Artwork", desc: "A piece that earns its wall." }
-            ].map((step, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
-                className="relative pl-8 md:pl-0 md:pt-16 md:flex-1 group"
-              >
-                <div className="absolute top-0 left-0 md:left-1/2 w-2 h-2 rounded-full bg-accent -translate-x-[5px] md:-translate-x-1/2 md:-translate-y-1/2 md:top-1/2 z-10" />
-                
-                <div className="text-7xl font-serif font-light text-muted opacity-30 absolute top-0 -left-4 md:-top-4 md:left-1/2 md:-translate-x-1/2 -z-10 transition-opacity duration-500 group-hover:opacity-50">
-                  {step.num}
-                </div>
-                
-                <h3 className="font-smallcaps tracking-widest text-foreground text-lg mb-3 md:text-center mt-2 md:mt-0">{step.title}</h3>
-                <p className="font-sans text-sm font-light text-muted-foreground md:text-center leading-relaxed">
-                  {step.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 6. About / Founder Section */}
       <section className="py-24 bg-card">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
@@ -315,8 +348,8 @@ export default function Home() {
             transition={{ duration: 1 }}
             className="flex-1 w-full"
           >
-            <div className="relative aspect-[4/3] w-full overflow-hidden">
-              <img src={studioImg} alt="Naqsh Studios — The hands behind the work" className="w-full h-full object-cover" />
+            <div className="relative w-full overflow-hidden">
+              <img src={studioImg} alt="Naqsh Studios — The hands behind the work" className="w-full h-auto object-contain" />
             </div>
           </motion.div>
           
@@ -340,53 +373,6 @@ export default function Home() {
               Meet the Studio <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
           </motion.div>
-        </div>
-      </section>
-
-      {/* 7. Gallery Section */}
-      <section className="py-32 px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="mb-20 text-center"
-          >
-            <h2 className="text-4xl md:text-5xl font-serif font-light text-foreground mb-4">
-              In Their Space
-            </h2>
-            <p className="text-lg font-sans font-light tracking-wide text-muted-foreground">
-              Naqsh pieces as they live in real interiors
-            </p>
-          </motion.div>
-
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-            {[
-              { img: arcadeImg, alt: "Arcade — Architecture Collection", title: "Arcade · Architecture Collection" },
-              { img: heechImg, alt: "Heech — Poetry Collection", title: "Heech · Poetry Collection" },
-              { img: sarvImg, alt: "Sarv — Roots Collection", title: "Sarv · Roots Collection" },
-              { img: delImg, alt: "Del — Poetry Collection", title: "Del · Poetry Collection" },
-              { img: arcadeImg, alt: "Arcade installed — private residence", title: "Private Residence, Dubai" },
-              { img: heechImg, alt: "Heech installed — interior", title: "Collector's Study, London" }
-            ].map((item, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i % 3 * 0.2 }}
-                className="relative overflow-hidden group break-inside-avoid"
-              >
-                <img src={item.img} alt={item.alt} className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="font-serif text-white text-xl px-4 text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    {item.title}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -437,17 +423,17 @@ export default function Home() {
             {[
               {
                 quote: "The piece transformed our living room. The depth of the layers catches morning light in a way I've never seen in wall art.",
-                author: "Layla H.",
+                author: "Sophie L.",
                 role: "Interior Designer"
               },
               {
                 quote: "Naqsh Studios created a custom calligraphy piece for my study. It's the most meaningful object in our home.",
-                author: "Reza M.",
+                author: "James R.",
                 role: "Collector"
               },
               {
                 quote: "We commissioned a lobby installation and our clients ask about it every single visit.",
-                author: "Shirin A.",
+                author: "Layla M.",
                 role: "Architect"
               }
             ].map((testimonial, i) => (
