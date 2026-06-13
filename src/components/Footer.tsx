@@ -1,5 +1,12 @@
 import { Link } from "wouter";
-import { Instagram, PinIcon } from "lucide-react";
+import { FaInstagram, FaTiktok, FaPinterest, FaEtsy } from "react-icons/fa";
+
+const socials = [
+  { label: "Instagram", href: "https://www.instagram.com/naqshstudios.art/", Icon: FaInstagram },
+  { label: "TikTok", href: "https://www.tiktok.com/@naqshstudios", Icon: FaTiktok },
+  { label: "Pinterest", href: "https://www.pinterest.com/naqshstudiosart/", Icon: FaPinterest },
+  { label: "Etsy", href: "https://www.etsy.com/shop/NaqshStudiosArt", Icon: FaEtsy },
+];
 
 export default function Footer() {
   return (
@@ -24,13 +31,19 @@ export default function Footer() {
           </Link>
         </nav>
 
-        <div className="flex-1 flex justify-end items-center space-x-4 text-muted-foreground">
-          <a href="#" className="hover:text-accent transition-colors">
-            <Instagram className="w-5 h-5" />
-          </a>
-          <a href="#" className="hover:text-accent transition-colors">
-            <PinIcon className="w-5 h-5" />
-          </a>
+        <div className="flex-1 flex justify-end items-center space-x-5 text-muted-foreground">
+          {socials.map(({ label, href, Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="hover:text-accent transition-colors"
+            >
+              <Icon className="w-5 h-5" />
+            </a>
+          ))}
         </div>
       </div>
       

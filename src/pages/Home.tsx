@@ -20,7 +20,6 @@ type Piece = {
   img: string;
   collection: string;
   name: string;
-  tech: string;
   story: string;
 };
 
@@ -41,33 +40,29 @@ const signaturePieces: Piece[] = [
     img: arcadeImg,
     collection: "Architecture Collection",
     name: "Arcade",
-    tech: "Multi-layer walnut & MDF, laser-cut geometry",
     story:
-      "Inspired by the arched arcades of Persian mosques — geometric latticework emerging from bold, contrasting planes.",
+      "Where geometry meets stillness. Persian arches and sacred geometry reimagined through a modern minimalist lens in soft neutral and charcoal tones.",
   },
   {
     img: heechImg,
     collection: "Poetry Collection",
     name: "Heech",
-    tech: "Five-layer oak & walnut, raised calligraphy",
     story:
-      "Heech — meaning 'nothing' in Farsi — sculpted in three dimensions, where the void becomes the statement.",
+      "Where absence becomes possibility. Flowing Persian calligraphy of the concept Hich — an open invitation to reflection from every angle.",
   },
   {
     img: sarvImg,
     collection: "Roots Collection",
     name: "Sarv",
-    tech: "Six-layer maple & mahogany, botanical relief",
     story:
-      "The cypress branch — symbol of resilience in Persian poetry — rendered in climbing layers of precision-cut wood.",
+      "Rooted in grace, reaching toward light. Botanical branches and layered leaves unfold across architectural planes in rich burgundy and warm natural wood.",
   },
   {
     img: delImg,
     collection: "Poetry Collection",
     name: "Kazheh",
-    tech: "Seven-layer ebonised oak, gold-leaf arch",
     story:
-      "Kazheh — a sculptural poem — written in bold calligraphy against midnight wood, framed by a gilded arch of longing.",
+      "A place of safety, a presence of trust. Layered calligraphy framed by architectural arches in calm, stable blue.",
   },
 ];
 
@@ -470,12 +465,9 @@ export default function Home() {
                 <span className="font-sans text-xs uppercase tracking-[0.25em] text-accent/70 mb-2 block">
                   {selected.collection}
                 </span>
-                <DialogTitle className="font-serif text-3xl font-light text-foreground mb-3">
+                <DialogTitle className="font-serif text-3xl font-light text-foreground mb-4">
                   {selected.name}
                 </DialogTitle>
-                <p className="font-sans text-xs text-muted-foreground tracking-widest uppercase mb-4">
-                  {selected.tech}
-                </p>
                 <DialogDescription className="font-sans font-light text-muted-foreground text-sm mb-8 leading-relaxed">
                   {selected.story}
                 </DialogDescription>
