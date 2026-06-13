@@ -70,7 +70,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <nav className="hidden md:flex flex-1 justify-center items-center space-x-8 text-sm uppercase tracking-[0.2em] font-medium">
+        <nav className="hidden md:flex flex-1 justify-center items-center space-x-8 text-sm normal-case tracking-[0.2em] font-medium">
           <div
             className="relative"
             onMouseEnter={() => setShowDropdown(true)}
