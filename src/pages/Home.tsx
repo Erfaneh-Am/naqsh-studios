@@ -43,7 +43,7 @@ export default function Home() {
             <img
               src={logoImg}
               alt="Naqsh Studios"
-              className="h-36 md:h-44 w-auto object-contain brightness-0 invert drop-shadow-lg"
+              className="h-52 md:h-64 w-auto object-contain brightness-0 invert drop-shadow-lg"
             />
           </motion.div>
 
@@ -87,7 +87,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="mb-20 text-center"
         >
-          <span className="font-smallcaps text-accent tracking-[0.3em] text-sm block mb-6">
+          <span className="font-smallcaps text-accent tracking-[0.25em] text-xl md:text-2xl font-medium block mb-6">
             Collections
           </span>
           <h2 className="text-4xl md:text-5xl font-serif font-light text-foreground">
@@ -286,7 +286,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.2 }}
             className="flex-1"
           >
-            <span className="font-smallcaps text-accent tracking-[0.3em] text-sm block mb-6">
+            <span className="font-smallcaps text-accent tracking-[0.25em] text-xl md:text-2xl font-medium block mb-6">
               The Studio
             </span>
             <h2 className="text-4xl md:text-5xl font-serif font-light text-foreground mb-8 leading-tight">
@@ -311,7 +311,7 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="font-smallcaps text-accent tracking-[0.3em] text-sm block mb-8">
+            <span className="font-smallcaps text-accent tracking-[0.25em] text-xl md:text-2xl font-medium block mb-8">
               Bespoke
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light mb-8 leading-tight">

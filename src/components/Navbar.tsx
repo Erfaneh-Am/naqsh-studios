@@ -57,13 +57,13 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-28 flex items-center justify-between">
         <div className="flex-1">
           <Link href="/" className="block" data-testid="link-logo">
             <img
               src={logoImg}
               alt="Naqsh Studios"
-              className={`h-14 w-auto object-contain transition-all duration-300 ${transparent ? "brightness-0 invert" : ""}`}
+              className={`h-20 w-auto object-contain transition-all duration-300 ${transparent ? "brightness-0 invert" : ""}`}
             />
           </Link>
         </div>
@@ -91,7 +91,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 6 }}
                   transition={{ duration: 0.18, ease: "easeOut" }}
-                  className="fixed left-0 right-0 top-20 z-40"
+                  className="fixed left-0 right-0 top-28 z-40"
                   style={{ pointerEvents: "auto" }}
                 >
                   <div
