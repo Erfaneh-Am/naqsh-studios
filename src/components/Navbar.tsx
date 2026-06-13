@@ -175,13 +175,16 @@ export default function Navbar() {
 
         <div className="flex-1 flex justify-end items-center space-x-6">
           <Button
+            asChild
             variant="outline"
             className={`rounded-none border border-accent text-accent hover:bg-accent hover:text-accent-foreground uppercase tracking-widest text-xs h-10 px-6 ${
               transparent ? "border-white/50 text-white hover:bg-white hover:text-black" : ""
             }`}
             data-testid="button-inquire"
           >
-            Inquire
+            <a href="mailto:erin@naqsh-studios.com?subject=Inquiry%20-%20Naqsh%20Studios">
+              Inquire
+            </a>
           </Button>
         </div>
       </div>
