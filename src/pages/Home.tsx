@@ -72,7 +72,7 @@ export default function Home() {
   return (
     <div className="bg-background min-h-screen text-foreground overflow-hidden">
       {/* 1. Hero Section */}
-      <section className="relative min-h-[100dvh] w-full flex items-center py-44 bg-foreground text-background">
+      <section className="relative min-h-[100dvh] w-full flex items-center pt-36 pb-20 bg-foreground text-background">
         <div className="absolute inset-0 z-0">
           <img 
             src={delImg}
@@ -85,7 +85,7 @@ export default function Home() {
         
         <div className="relative z-10 w-full max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
           <motion.h1
-            className="text-5xl md:text-6xl lg:text-7xl font-serif font-light leading-[1.1] tracking-widest mb-4 text-background"
+            className="text-5xl md:text-6xl lg:text-7xl font-serif font-light leading-[1.1] tracking-widest mb-0 text-background"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.1 }}
@@ -95,6 +95,7 @@ export default function Home() {
           </motion.h1>
 
           <motion.div
+            className="-my-12 md:-my-16"
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.1, delay: 0.5 }}
@@ -107,7 +108,7 @@ export default function Home() {
           </motion.div>
 
           <motion.p
-            className="text-sm md:text-base font-sans font-light tracking-[0.1em] text-background/70 max-w-xl mt-3 mb-7 leading-relaxed"
+            className="text-sm md:text-base font-sans font-light tracking-[0.1em] text-background/70 max-w-xl mt-0 mb-6 leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
