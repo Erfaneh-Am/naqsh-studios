@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion, useScroll, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { slugify } from "@/data/pieces";
 import logoImg from "@assets/ChatGPT_Image_May_23,_2026,_10_56_08_PM_1781333693722.png";
 
 const categories = [
@@ -110,7 +111,11 @@ export default function Navbar() {
                             className="group"
                             data-testid={`dropdown-category-${i}`}
                           >
-                            <Link href="/collections" className="block">
+                            <Link
+                              href="/collections"
+                              className="block"
+                              onClick={() => setShowDropdown(false)}
+                            >
                               <div className="w-6 h-px bg-accent mb-4" />
                               <h3
                                 className={`font-serif text-base mb-1 group-hover:text-accent transition-colors ${
@@ -126,27 +131,30 @@ export default function Navbar() {
                               >
                                 {cat.desc}
                               </p>
-                              <ul className="space-y-2">
-                                <li
-                                  className={`text-[10px] font-sans uppercase tracking-[0.2em] mb-1 ${
-                                    transparent ? "text-accent/80" : "text-accent"
-                                  }`}
-                                >
-                                  Collections
-                                </li>
-                                {cat.collections.map((col, j) => (
-                                  <li
-                                    key={j}
+                            </Link>
+                            <ul className="space-y-2">
+                              <li
+                                className={`text-[10px] font-sans uppercase tracking-[0.2em] mb-1 ${
+                                  transparent ? "text-accent/80" : "text-accent"
+                                }`}
+                              >
+                                Collections
+                              </li>
+                              {cat.collections.map((col, j) => (
+                                <li key={j}>
+                                  <Link
+                                    href={`/collections/${slugify(col)}`}
+                                    onClick={() => setShowDropdown(false)}
                                     className={`flex items-center gap-2 text-[11px] font-sans font-light tracking-wide transition-colors cursor-pointer hover:text-accent ${
                                       transparent ? "text-background/70" : "text-muted-foreground"
                                     }`}
                                   >
                                     <span className="w-2.5 h-px bg-accent/40 inline-block flex-shrink-0" />
                                     {col}
-                                  </li>
-                                ))}
-                              </ul>
-                            </Link>
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
                           </motion.div>
                         ))}
                       </div>
