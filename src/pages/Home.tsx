@@ -77,7 +77,7 @@ export default function Home() {
   return (
     <div className="bg-background min-h-screen text-foreground overflow-hidden">
       {/* 1. Hero Section */}
-      <section className="relative h-[100dvh] w-full flex items-center bg-foreground text-background">
+      <section className="relative min-h-[100dvh] w-full flex items-center py-44 bg-foreground text-background">
         <div className="absolute inset-0 z-0">
           <img 
             src={delImg}
@@ -88,7 +88,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/40 via-transparent to-foreground/70" />
         </div>
         
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 flex flex-col items-center text-center mt-20">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
           <motion.h1
             className="text-5xl md:text-6xl lg:text-7xl font-serif font-light leading-[1.1] tracking-widest mb-4 text-background"
             initial={{ opacity: 0, y: 24 }}
@@ -107,7 +107,7 @@ export default function Home() {
             <img
               src={logoImg}
               alt="Naqsh Studios"
-              className="h-52 md:h-64 w-auto object-contain brightness-0 invert drop-shadow-lg"
+              className="h-[26rem] md:h-[32rem] w-auto object-contain brightness-0 invert drop-shadow-lg"
             />
           </motion.div>
 

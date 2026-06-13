@@ -15,7 +15,7 @@ export default function ComingSoon() {
         <img
           src={logoImg}
           alt="Naqsh Studios"
-          className="h-56 md:h-72 w-auto object-contain brightness-0 invert drop-shadow-lg mb-10"
+          className="h-[28rem] md:h-[36rem] w-auto object-contain brightness-0 invert drop-shadow-lg mb-10"
         />
 
         <span className="font-smallcaps text-accent tracking-[0.35em] text-base md:text-lg uppercase mb-6">
