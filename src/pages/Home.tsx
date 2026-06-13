@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Mail } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import arcadeImg from "@assets/arcade_1781333629648.png";
 import heechImg from "@assets/heech_1781333629653.png";
 import sarvImg from "@assets/sarv_1781333629654.png";
@@ -9,7 +16,64 @@ import delImg from "@assets/EF6BD3BA-F69A-4E6D-919D-359F3307C5A5_1781372629100.p
 import studioImg from "@assets/ChatGPT_Image_May_23,_2026,_11_17_58_PM_1781333693723.png";
 import logoImg from "@assets/ChatGPT_Image_May_23,_2026,_10_56_08_PM_1781333693722.png";
 
+type Piece = {
+  img: string;
+  collection: string;
+  name: string;
+  tech: string;
+  story: string;
+};
+
+const SIZES = [
+  { size: "24″ × 36″", price: "$650" },
+  { size: "32″ × 48″", price: "$985" },
+];
+const CUSTOM_NOTE = "Custom size — contact us";
+
+function orderLink(piece: Piece) {
+  const subject = `Order Inquiry: ${piece.name} - ${piece.collection}`;
+  const body = `Hi Erin,\n\nI'd like to order ${piece.name}.\nPreferred size: [24x36 / 32x48 / custom]\n\nThanks,`;
+  return `mailto:erin@naqsh-studios.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+const signaturePieces: Piece[] = [
+  {
+    img: arcadeImg,
+    collection: "Architecture Collection",
+    name: "Arcade",
+    tech: "Multi-layer walnut & MDF, laser-cut geometry",
+    story:
+      "Inspired by the arched arcades of Persian mosques — geometric latticework emerging from bold, contrasting planes.",
+  },
+  {
+    img: heechImg,
+    collection: "Poetry Collection",
+    name: "Heech",
+    tech: "Five-layer oak & walnut, raised calligraphy",
+    story:
+      "Heech — meaning 'nothing' in Farsi — sculpted in three dimensions, where the void becomes the statement.",
+  },
+  {
+    img: sarvImg,
+    collection: "Roots Collection",
+    name: "Sarv",
+    tech: "Six-layer maple & mahogany, botanical relief",
+    story:
+      "The cypress branch — symbol of resilience in Persian poetry — rendered in climbing layers of precision-cut wood.",
+  },
+  {
+    img: delImg,
+    collection: "Poetry Collection",
+    name: "Kazheh",
+    tech: "Seven-layer ebonised oak, gold-leaf arch",
+    story:
+      "Kazheh — a sculptural poem — written in bold calligraphy against midnight wood, framed by a gilded arch of longing.",
+  },
+];
+
 export default function Home() {
+  const [selected, setSelected] = useState<Piece | null>(null);
+
   return (
     <div className="bg-background min-h-screen text-foreground overflow-hidden">
       {/* 1. Hero Section */}
@@ -210,55 +274,27 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-            {[
-              {
-                img: arcadeImg,
-                collection: "Architecture Collection",
-                name: "Arcade",
-                tech: "Multi-layer walnut & MDF, laser-cut geometry",
-                story: "Inspired by the arched arcades of Persian mosques — geometric latticework emerging from bold, contrasting planes."
-              },
-              {
-                img: heechImg,
-                collection: "Poetry Collection",
-                name: "Heech",
-                tech: "Five-layer oak & walnut, raised calligraphy",
-                story: "Heech — meaning 'nothing' in Farsi — sculpted in three dimensions, where the void becomes the statement."
-              },
-              {
-                img: sarvImg,
-                collection: "Roots Collection",
-                name: "Sarv",
-                tech: "Six-layer maple & mahogany, botanical relief",
-                story: "The cypress branch — symbol of resilience in Persian poetry — rendered in climbing layers of precision-cut wood."
-              },
-              {
-                img: delImg,
-                collection: "Poetry Collection",
-                name: "Kazheh",
-                tech: "Seven-layer ebonised oak, gold-leaf arch",
-                story: "Kazheh — a sculptural poem — written in bold calligraphy against midnight wood, framed by a gilded arch of longing."
-              }
-            ].map((piece, i) => (
-              <motion.div 
+            {signaturePieces.map((piece, i) => (
+              <motion.button
                 key={i}
+                type="button"
+                onClick={() => setSelected(piece)}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.8, delay: i * 0.2 }}
-                className="group flex flex-col"
+                className="group flex flex-col text-left focus:outline-none"
+                data-testid={`card-piece-${i}`}
               >
                 <div className="relative aspect-[3/4] overflow-hidden mb-6 bg-muted">
                   <img src={piece.img} alt={piece.name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                 </div>
                 <span className="font-sans text-xs uppercase tracking-[0.25em] text-accent/70 mb-2 block">{piece.collection}</span>
                 <h3 className="font-serif text-2xl text-foreground mb-2">{piece.name}</h3>
-                <p className="font-sans text-xs text-muted-foreground tracking-widest uppercase mb-3">{piece.tech}</p>
-                <p className="font-sans font-light text-muted-foreground text-sm mb-6 flex-grow leading-relaxed">{piece.story}</p>
-                <Link href="/collections" className="inline-flex items-center text-xs uppercase tracking-widest font-medium text-foreground hover:text-accent transition-colors" data-testid={`link-view-piece-${i}`}>
-                  View Piece <ArrowRight className="ml-2 w-3 h-3" />
-                </Link>
-              </motion.div>
+                <span className="inline-flex items-center text-xs uppercase tracking-widest font-medium text-foreground group-hover:text-accent transition-colors mt-1">
+                  View Details <ArrowRight className="ml-2 w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </motion.button>
             ))}
           </div>
         </div>
@@ -418,6 +454,64 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      <Dialog open={!!selected} onOpenChange={(open) => !open && setSelected(null)}>
+        <DialogContent className="max-w-3xl p-0 gap-0 bg-background border-border max-h-[90vh] overflow-y-auto">
+          {selected && (
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="relative aspect-[3/4] md:aspect-auto bg-muted">
+                <img
+                  src={selected.img}
+                  alt={selected.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-8 md:p-10 flex flex-col">
+                <span className="font-sans text-xs uppercase tracking-[0.25em] text-accent/70 mb-2 block">
+                  {selected.collection}
+                </span>
+                <DialogTitle className="font-serif text-3xl font-light text-foreground mb-3">
+                  {selected.name}
+                </DialogTitle>
+                <p className="font-sans text-xs text-muted-foreground tracking-widest uppercase mb-4">
+                  {selected.tech}
+                </p>
+                <DialogDescription className="font-sans font-light text-muted-foreground text-sm mb-8 leading-relaxed">
+                  {selected.story}
+                </DialogDescription>
+
+                <div className="border-t border-border pt-6 mb-8">
+                  <span className="font-smallcaps text-accent tracking-[0.2em] text-sm uppercase block mb-4">
+                    Sizes &amp; Pricing
+                  </span>
+                  <ul className="space-y-3">
+                    {SIZES.map((s) => (
+                      <li
+                        key={s.size}
+                        className="flex items-baseline justify-between border-b border-border/50 pb-2"
+                      >
+                        <span className="font-serif text-lg text-foreground">{s.size}</span>
+                        <span className="font-sans text-base text-foreground">{s.price}</span>
+                      </li>
+                    ))}
+                    <li className="pt-1">
+                      <span className="font-serif text-lg text-muted-foreground italic">
+                        {CUSTOM_NOTE}
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <a href={orderLink(selected)} className="mt-auto" data-testid="link-order">
+                  <Button className="w-full rounded-none bg-primary text-primary-foreground hover:bg-foreground uppercase tracking-widest text-sm h-14">
+                    <Mail className="w-4 h-4 mr-2" /> Order / Inquire
+                  </Button>
+                </a>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
