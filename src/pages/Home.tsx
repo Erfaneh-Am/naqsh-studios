@@ -242,8 +242,11 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-serif font-light text-foreground mb-8 leading-tight">
               Art rooted in heritage,<br />crafted for today.
             </h2>
+            <p className="text-lg font-sans font-light text-muted-foreground mb-6 leading-relaxed max-w-lg">
+              At Naqsh Studios, we believe art should do more than fill a wall. It should tell a story, evoke a feeling, and create a lasting connection.
+            </p>
             <p className="text-lg font-sans font-light text-muted-foreground mb-10 leading-relaxed max-w-lg">
-              Naqsh Studios was born from a deep reverence for Persian architectural geometry and a conviction that handcraft belongs in contemporary interiors. Every piece is designed to live with you — to age, to catch light differently at different hours, to carry meaning.
+              Inspired by the poetry, architecture, and cultural heritage of the Middle East, we create handcrafted wooden artworks that bridge tradition and contemporary design. Each piece is thoughtfully composed from layered wood and shaped by themes of identity, belonging, nature, and human experience — designed to bring depth, warmth, and meaning into the spaces where life unfolds.
             </p>
             <Link href="/about" className="inline-flex items-center text-sm uppercase tracking-widest font-medium text-foreground hover:text-accent transition-colors">
               Meet the Studio <ArrowRight className="ml-2 w-4 h-4" />

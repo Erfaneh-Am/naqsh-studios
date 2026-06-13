@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Mail } from "lucide-react";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -8,7 +9,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { type Piece, SIZES, CUSTOM_NOTE, orderLink } from "@/data/pieces";
+import { type Piece, SIZES, CUSTOM_NOTE, orderLink, slugify } from "@/data/pieces";
 
 export default function PieceGrid({ pieces }: { pieces: Piece[] }) {
   const [selected, setSelected] = useState<Piece | null>(null);
@@ -17,32 +18,47 @@ export default function PieceGrid({ pieces }: { pieces: Piece[] }) {
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {pieces.map((piece, i) => (
-          <motion.button
+          <motion.div
             key={piece.name}
-            type="button"
-            onClick={() => setSelected(piece)}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, delay: i * 0.15 }}
-            className="group flex flex-col text-left focus:outline-none"
+            className="group flex flex-col"
             data-testid={`card-piece-${i}`}
           >
-            <div className="relative aspect-[3/4] overflow-hidden mb-6 bg-muted">
-              <img
-                src={piece.img}
-                alt={piece.name}
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-              />
-            </div>
-            <span className="font-sans text-xs uppercase tracking-[0.25em] text-accent/70 mb-2 block">
+            <button
+              type="button"
+              onClick={() => setSelected(piece)}
+              className="block text-left focus:outline-none"
+              data-testid={`piece-open-${i}`}
+            >
+              <div className="relative aspect-[3/4] overflow-hidden mb-6 bg-muted">
+                <img
+                  src={piece.img}
+                  alt={piece.name}
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                />
+              </div>
+            </button>
+            <Link
+              href={`/collections/${slugify(piece.collection)}`}
+              className="font-sans text-xs uppercase tracking-[0.25em] text-accent/70 hover:text-accent transition-colors mb-2 inline-block w-fit"
+              data-testid={`piece-collection-${i}`}
+            >
               {piece.collection}
-            </span>
-            <h3 className="font-serif text-2xl text-foreground mb-2">{piece.name}</h3>
-            <span className="inline-flex items-center text-xs uppercase tracking-widest font-medium text-foreground group-hover:text-accent transition-colors mt-1">
-              View Details <ArrowRight className="ml-2 w-3 h-3 group-hover:translate-x-1 transition-transform" />
-            </span>
-          </motion.button>
+            </Link>
+            <button
+              type="button"
+              onClick={() => setSelected(piece)}
+              className="text-left focus:outline-none"
+            >
+              <h3 className="font-serif text-2xl text-foreground mb-2">{piece.name}</h3>
+              <span className="inline-flex items-center text-xs uppercase tracking-widest font-medium text-foreground group-hover:text-accent transition-colors mt-1">
+                View Details <ArrowRight className="ml-2 w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </button>
+          </motion.div>
         ))}
       </div>
 
