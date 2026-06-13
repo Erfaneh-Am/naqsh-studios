@@ -24,9 +24,9 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/40 via-transparent to-foreground/70" />
         </div>
         
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 pt-20 flex flex-col items-center text-center">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 flex flex-col items-center text-center mt-20">
           <motion.h1
-            className="text-5xl md:text-6xl lg:text-7xl font-serif font-light leading-[1.1] tracking-widest mb-10 text-background"
+            className="text-5xl md:text-6xl lg:text-7xl font-serif font-light leading-[1.1] tracking-widest mb-4 text-background"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.1 }}
@@ -39,7 +39,6 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.1, delay: 0.5 }}
-            className="my-4"
           >
             <img
               src={logoImg}
@@ -49,12 +48,12 @@ export default function Home() {
           </motion.div>
 
           <motion.p
-            className="text-base md:text-lg font-sans font-light tracking-[0.12em] text-background/70 max-w-lg mt-8 mb-12 leading-relaxed"
+            className="text-sm md:text-base font-sans font-light tracking-[0.1em] text-background/70 max-w-xl mt-3 mb-7 leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
           >
-            Contemporary wooden artworks inspired by heritage,<br className="hidden sm:block" /> craftsmanship, and meaningful design.
+            Contemporary wooden artworks inspired by heritage,<br />craftsmanship, and meaningful design.
           </motion.p>
 
           <motion.div
@@ -192,78 +191,6 @@ export default function Home() {
 
       <div className="w-full h-px bg-accent/20" />
 
-      {/* Categories + Collections Directory */}
-      <section className="py-24 px-6 bg-background">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="mb-16"
-          >
-            <span className="font-sans text-xs uppercase tracking-[0.3em] text-accent block mb-4">Browse</span>
-            <h2 className="text-3xl md:text-4xl font-serif font-light text-foreground">Our Collections</h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-12">
-            {[
-              {
-                category: "Wall Sculptures",
-                desc: "Dimensional wooden artworks for your walls",
-                collections: ["Architecture Collection", "Poetry Collection", "Roots Collection"]
-              },
-              {
-                category: "Lamps",
-                desc: "Light sculpted by hand and heritage",
-                collections: ["Ambient Series", "Pendant Collection"]
-              },
-              {
-                category: "Mirrors",
-                desc: "Reflections framed in crafted wood",
-                collections: ["Arch Series", "Geometric Frames"]
-              },
-              {
-                category: "Clocks",
-                desc: "Time rendered as a decorative object",
-                collections: ["Wall Clocks", "Table Clocks"]
-              },
-              {
-                category: "Home Decors",
-                desc: "Objects that complete a considered space",
-                collections: ["Tabletop Objects", "Shelf Sculptures"]
-              }
-            ].map((cat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="group"
-                data-testid={`category-${cat.category.toLowerCase().replace(/\s+/g, '-')}`}
-              >
-                <div className="w-8 h-px bg-accent mb-5" />
-                <Link href="/collections" className="block">
-                  <h3 className="font-serif text-xl text-foreground mb-2 group-hover:text-accent transition-colors">{cat.category}</h3>
-                  <p className="font-sans text-sm font-light text-muted-foreground mb-5 leading-relaxed">{cat.desc}</p>
-                  <ul className="space-y-2">
-                    {cat.collections.map((col, j) => (
-                      <li key={j} className="flex items-center gap-2 text-xs font-sans uppercase tracking-[0.15em] text-muted-foreground hover:text-accent transition-colors cursor-pointer">
-                        <span className="w-3 h-px bg-accent/40 inline-block" />
-                        {col}
-                      </li>
-                    ))}
-                  </ul>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <div className="w-full h-px bg-accent/20" />
-
       {/* 4. Signature Pieces */}
       <section className="py-32 bg-card">
         <div className="max-w-7xl mx-auto px-6">
@@ -308,9 +235,9 @@ export default function Home() {
               {
                 img: delImg,
                 collection: "Poetry Collection",
-                name: "Del",
+                name: "Kazheh",
                 tech: "Seven-layer ebonised oak, gold-leaf arch",
-                story: "Del — meaning 'heart' — written in bold calligraphy against midnight wood, framed by a gilded arch of longing."
+                story: "Kazheh — a sculptural poem — written in bold calligraphy against midnight wood, framed by a gilded arch of longing."
               }
             ].map((piece, i) => (
               <motion.div 
