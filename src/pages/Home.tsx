@@ -49,7 +49,7 @@ export default function Home() {
           </motion.div>
 
           <motion.p
-            className="text-sm md:text-base font-sans font-light tracking-[0.1em] text-background/70 max-w-xl mt-0 mb-6 leading-relaxed"
+            className="text-sm md:text-base font-sans font-light tracking-[0.1em] text-background/70 max-w-xl -mt-8 md:-mt-12 mb-6 leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}

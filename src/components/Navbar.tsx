@@ -51,20 +51,20 @@ export default function Navbar() {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         transparent ? "bg-transparent text-white" : "bg-background/95 backdrop-blur-md text-foreground border-b border-border/40"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="max-w-7xl mx-auto px-6 h-44 flex items-center justify-between">
+      <div className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-300 ${transparent ? "h-44" : "h-16"}`}>
         <div className="flex-1">
           <Link href="/" className="block" data-testid="link-logo">
             <img
               src={logoImg}
               alt="Naqsh Studios"
-              className={`h-40 w-auto object-contain transition-all duration-300 ${transparent ? "brightness-0 invert" : ""}`}
+              className={`w-auto object-contain transition-all duration-300 ${transparent ? "h-40 brightness-0 invert" : "h-12"}`}
             />
           </Link>
         </div>
@@ -92,7 +92,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 6 }}
                   transition={{ duration: 0.18, ease: "easeOut" }}
-                  className="fixed left-0 right-0 top-44 z-40"
+                  className={`fixed left-0 right-0 z-40 transition-all duration-300 ${transparent ? "top-44" : "top-16"}`}
                   style={{ pointerEvents: "auto" }}
                 >
                   <div
