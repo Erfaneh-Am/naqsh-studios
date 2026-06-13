@@ -2,6 +2,11 @@ import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import arcadeImg from "@assets/arcade_1781333629648.png";
+import heechImg from "@assets/heech_1781333629653.png";
+import sarvImg from "@assets/sarv_1781333629654.png";
+import delImg from "@assets/1794E90A-86B1-485A-97EA-64DEF8266FAE_1781333649082.png";
+import studioImg from "@assets/ChatGPT_Image_May_23,_2026,_11_17_58_PM_1781333693723.png";
 
 export default function Home() {
   return (
@@ -10,9 +15,9 @@ export default function Home() {
       <section className="relative h-[100dvh] w-full flex items-center bg-foreground text-background">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/hero.png" 
-            alt="Layered wooden geometric wall art" 
-            className="w-full h-full object-cover opacity-40 mix-blend-overlay"
+            src={delImg}
+            alt="Layered wooden wall art — Del, Poetry Collection" 
+            className="w-full h-full object-cover opacity-50 mix-blend-overlay"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/70 to-transparent" />
         </div>
@@ -83,21 +88,49 @@ export default function Home() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
-          {/* Card 1 - Large */}
-          <Link href="/collections" className="group block col-span-1 md:col-span-8 relative overflow-hidden h-[600px] bg-card">
-            <img src="/images/collection-1.png" alt="Wall Art" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+          {/* Card 1 - Large: Wall Sculptures */}
+          <Link href="/collections" className="group block col-span-1 md:col-span-8 relative overflow-hidden h-[600px] bg-card" data-testid="card-collection-wall-sculptures">
+            <img src={arcadeImg} alt="Wall Sculptures — Architecture Collection" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-0 left-0 p-8 w-full text-white">
-              <h3 className="font-serif text-3xl mb-2 transition-transform duration-500 group-hover:-translate-y-2">Wall Art</h3>
-              <p className="font-sans font-light tracking-wide text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Layered geometric sculptures for your walls</p>
+              <span className="font-sans text-xs uppercase tracking-[0.25em] text-white/50 mb-2 block">Featured</span>
+              <h3 className="font-serif text-4xl mb-2 transition-transform duration-500 group-hover:-translate-y-2">Wall Sculptures</h3>
+              <p className="font-sans font-light tracking-wide text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Layered dimensional artworks for spaces that demand presence</p>
               <div className="w-0 h-px bg-accent mt-4 group-hover:w-12 transition-all duration-500 delay-200" />
             </div>
           </Link>
 
-          {/* Card 2 */}
-          <Link href="/collections" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[600px] bg-card">
-            <img src="/images/collection-2.png" alt="Mirrors" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+          {/* Card 2: Lamps */}
+          <Link href="/collections" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[600px] bg-primary" data-testid="card-collection-lamps">
+            <div className="absolute inset-0 opacity-15">
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                <circle cx="100" cy="100" r="80" stroke="currentColor" strokeWidth="1"/>
+                <circle cx="100" cy="100" r="50" stroke="currentColor" strokeWidth="1"/>
+                <circle cx="100" cy="100" r="20" stroke="currentColor" strokeWidth="1"/>
+                <line x1="100" y1="20" x2="100" y2="180" stroke="currentColor" strokeWidth="0.5"/>
+                <line x1="20" y1="100" x2="180" y2="100" stroke="currentColor" strokeWidth="0.5"/>
+                <line x1="43" y1="43" x2="157" y2="157" stroke="currentColor" strokeWidth="0.5"/>
+                <line x1="157" y1="43" x2="43" y2="157" stroke="currentColor" strokeWidth="0.5"/>
+              </svg>
+            </div>
+            <div className="absolute inset-0 flex flex-col justify-end p-8 text-background">
+              <h3 className="font-serif text-3xl mb-2 transition-transform duration-500 group-hover:-translate-y-2">Lamps</h3>
+              <p className="font-sans font-light tracking-wide text-background/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Light sculpted by hand, shaped by heritage</p>
+              <div className="w-0 h-px bg-accent mt-4 group-hover:w-12 transition-all duration-500 delay-200" />
+            </div>
+          </Link>
+
+          {/* Card 3: Mirrors */}
+          <Link href="/collections" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[400px] bg-card" data-testid="card-collection-mirrors">
+            <div className="absolute inset-0 bg-foreground/5" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <svg viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-32 h-40 opacity-20">
+                <rect x="10" y="10" width="100" height="140" rx="50" stroke="currentColor" strokeWidth="2"/>
+                <rect x="20" y="20" width="80" height="120" rx="40" stroke="currentColor" strokeWidth="1"/>
+                <path d="M60 35 L70 50 L60 65 L50 50 Z" stroke="currentColor" strokeWidth="1" fill="none"/>
+              </svg>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8 w-full text-white">
               <h3 className="font-serif text-3xl mb-2 transition-transform duration-500 group-hover:-translate-y-2">Mirrors</h3>
               <p className="font-sans font-light tracking-wide text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Reflections framed in crafted wood</p>
@@ -105,45 +138,44 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Card 3 */}
-          <Link href="/collections" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[400px] bg-card">
-            <img src="/images/collection-3.png" alt="Wall Clocks" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+          {/* Card 4: Clocks */}
+          <Link href="/collections" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[400px] bg-muted" data-testid="card-collection-clocks">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-36 h-36 opacity-15">
+                <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="1.5"/>
+                <circle cx="50" cy="50" r="35" stroke="currentColor" strokeWidth="0.5"/>
+                <line x1="50" y1="20" x2="50" y2="35" stroke="currentColor" strokeWidth="2"/>
+                <line x1="50" y1="50" x2="65" y2="55" stroke="currentColor" strokeWidth="1.5"/>
+                <circle cx="50" cy="50" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8 w-full text-white">
-              <h3 className="font-serif text-3xl mb-2 transition-transform duration-500 group-hover:-translate-y-2">Wall Clocks</h3>
-              <p className="font-sans font-light tracking-wide text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Time as an art form</p>
+              <h3 className="font-serif text-3xl mb-2 transition-transform duration-500 group-hover:-translate-y-2">Clocks</h3>
+              <p className="font-sans font-light tracking-wide text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Time as an art form — wall and table</p>
               <div className="w-0 h-px bg-accent mt-4 group-hover:w-12 transition-all duration-500 delay-200" />
             </div>
           </Link>
 
-          {/* Card 4 */}
-          <Link href="/collections" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[400px] bg-card">
-            <img src="/images/collection-4.png" alt="Table Clocks" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-            <div className="absolute bottom-0 left-0 p-8 w-full text-white">
-              <h3 className="font-serif text-3xl mb-2 transition-transform duration-500 group-hover:-translate-y-2">Table Clocks</h3>
-              <p className="font-sans font-light tracking-wide text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Desk companions of quiet distinction</p>
-              <div className="w-0 h-px bg-accent mt-4 group-hover:w-12 transition-all duration-500 delay-200" />
-            </div>
-          </Link>
-
-          {/* Card 5 & 6 (Abstract/Pattern) */}
+          {/* Card 5 & 6: Home Decors + Custom Commissions */}
           <div className="col-span-1 md:col-span-4 grid grid-rows-2 gap-6 md:gap-8 h-[400px]">
-            <Link href="/collections" className="group block relative overflow-hidden bg-primary p-6 flex flex-col justify-end">
+            <Link href="/collections" className="group block relative overflow-hidden bg-foreground p-6 flex flex-col justify-end" data-testid="card-collection-home-decors">
               <div className="absolute inset-0 opacity-10">
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M50 0L100 50L50 100L0 50L50 0Z" stroke="currentColor" strokeWidth="2"/>
-                  <path d="M50 20L80 50L50 80L20 50L50 20Z" stroke="currentColor" strokeWidth="2"/>
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                  <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" stroke="currentColor" strokeWidth="1" fill="none"/>
+                  <polygon points="50,20 80,35 80,65 50,80 20,65 20,35" stroke="currentColor" strokeWidth="1" fill="none"/>
+                  <polygon points="50,35 65,42.5 65,57.5 50,65 35,57.5 35,42.5" stroke="currentColor" strokeWidth="1" fill="none"/>
                 </svg>
               </div>
-              <h3 className="font-serif text-2xl text-background mb-1">Lamp Stands</h3>
-              <p className="font-sans text-sm font-light text-background/80">Light shaped by hand</p>
+              <h3 className="font-serif text-2xl text-background mb-1">Home Decors</h3>
+              <p className="font-sans text-sm font-light text-background/70">Objects that complete a space</p>
+              <ArrowUpRight className="absolute top-6 right-6 w-4 h-4 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
             </Link>
             
-            <Link href="/collections" className="group block relative overflow-hidden bg-muted p-6 flex flex-col justify-end">
+            <Link href="/collections" className="group block relative overflow-hidden bg-muted/60 border border-accent/20 p-6 flex flex-col justify-end" data-testid="card-collection-custom">
               <h3 className="font-serif text-2xl text-foreground mb-1">Custom Commissions</h3>
-              <p className="font-sans text-sm font-light text-foreground/80">Artworks made for your space</p>
-              <ArrowUpRight className="absolute top-6 right-6 w-5 h-5 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <p className="font-sans text-sm font-light text-foreground/60">Artworks made for your space</p>
+              <ArrowUpRight className="absolute top-6 right-6 w-4 h-4 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
             </Link>
           </div>
         </div>
@@ -169,25 +201,35 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {[
               {
-                img: "/images/signature-1.png",
-                name: "The Isfahan Vault",
-                tech: "Seven-layer walnut, laser-etched geometry",
-                story: "Inspired by the geometric vaulting of Isfahan's Grand Mosque, catching light differently at every hour."
+                img: arcadeImg,
+                collection: "Architecture Collection",
+                name: "Arcade",
+                tech: "Multi-layer walnut & MDF, laser-cut geometry",
+                story: "Inspired by the arched arcades of Persian mosques — geometric latticework emerging from bold, contrasting planes."
               },
               {
-                img: "/images/signature-2.png",
-                name: "Whispers of Hafez",
-                tech: "Five-layer dark oak, contemporary calligraphy",
-                story: "A modern interpretation of Persian poetry, where the negative space holds as much weight as the wood."
+                img: heechImg,
+                collection: "Poetry Collection",
+                name: "Heech",
+                tech: "Five-layer oak & walnut, raised calligraphy",
+                story: "Heech — meaning 'nothing' in Farsi — sculpted in three dimensions, where the void becomes the statement."
               },
               {
-                img: "/images/signature-3.png",
-                name: "Shiraz Star",
-                tech: "Nine-layer maple and walnut, architectural motif",
-                story: "Rooted in traditional star patterns, exploded into three dimensions to create deep, moving shadows."
+                img: sarvImg,
+                collection: "Roots Collection",
+                name: "Sarv",
+                tech: "Six-layer maple & mahogany, botanical relief",
+                story: "The cypress branch — symbol of resilience in Persian poetry — rendered in climbing layers of precision-cut wood."
+              },
+              {
+                img: delImg,
+                collection: "Poetry Collection",
+                name: "Del",
+                tech: "Seven-layer ebonised oak, gold-leaf arch",
+                story: "Del — meaning 'heart' — written in bold calligraphy against midnight wood, framed by a gilded arch of longing."
               }
             ].map((piece, i) => (
               <motion.div 
@@ -198,14 +240,15 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: i * 0.2 }}
                 className="group flex flex-col"
               >
-                <div className="relative aspect-[4/5] overflow-hidden mb-8 bg-muted">
+                <div className="relative aspect-[3/4] overflow-hidden mb-6 bg-muted">
                   <img src={piece.img} alt={piece.name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                 </div>
-                <h3 className="font-serif text-3xl text-foreground mb-2">{piece.name}</h3>
-                <p className="font-smallcaps text-accent text-sm tracking-widest mb-4">{piece.tech}</p>
-                <p className="font-sans font-light text-muted-foreground mb-6 flex-grow">{piece.story}</p>
-                <Link href="/collections" className="inline-flex items-center text-sm uppercase tracking-widest font-medium text-foreground hover:text-accent transition-colors">
-                  View Piece <ArrowRight className="ml-2 w-4 h-4" />
+                <span className="font-sans text-xs uppercase tracking-[0.25em] text-accent/70 mb-2 block">{piece.collection}</span>
+                <h3 className="font-serif text-2xl text-foreground mb-2">{piece.name}</h3>
+                <p className="font-sans text-xs text-muted-foreground tracking-widest uppercase mb-3">{piece.tech}</p>
+                <p className="font-sans font-light text-muted-foreground text-sm mb-6 flex-grow leading-relaxed">{piece.story}</p>
+                <Link href="/collections" className="inline-flex items-center text-xs uppercase tracking-widest font-medium text-foreground hover:text-accent transition-colors" data-testid={`link-view-piece-${i}`}>
+                  View Piece <ArrowRight className="ml-2 w-3 h-3" />
                 </Link>
               </motion.div>
             ))}
@@ -273,7 +316,7 @@ export default function Home() {
             className="flex-1 w-full"
           >
             <div className="relative aspect-[4/3] w-full overflow-hidden">
-              <img src="/images/studio.png" alt="Naqsh Studios Workspace" className="w-full h-full object-cover" />
+              <img src={studioImg} alt="Naqsh Studios — The hands behind the work" className="w-full h-full object-cover" />
             </div>
           </motion.div>
           
@@ -320,12 +363,12 @@ export default function Home() {
 
           <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
             {[
-              { img: "/images/gallery-1.png", alt: "Living room installation", title: "Private Residence, London" },
-              { img: "/images/gallery-2.png", alt: "Minimalist space", title: "Minimalist Loft, Berlin" },
-              { img: "/images/gallery-3.png", alt: "Dining room", title: "Dining Room, Paris" },
-              { img: "/images/gallery-4.png", alt: "Bedroom art", title: "Boutique Hotel, Rome" },
-              { img: "/images/gallery-5.png", alt: "Entryway mirror", title: "Entryway, New York" },
-              { img: "/images/gallery-6.png", alt: "Office art", title: "Home Office, Dubai" }
+              { img: arcadeImg, alt: "Arcade — Architecture Collection", title: "Arcade · Architecture Collection" },
+              { img: heechImg, alt: "Heech — Poetry Collection", title: "Heech · Poetry Collection" },
+              { img: sarvImg, alt: "Sarv — Roots Collection", title: "Sarv · Roots Collection" },
+              { img: delImg, alt: "Del — Poetry Collection", title: "Del · Poetry Collection" },
+              { img: arcadeImg, alt: "Arcade installed — private residence", title: "Private Residence, Dubai" },
+              { img: heechImg, alt: "Heech installed — interior", title: "Collector's Study, London" }
             ].map((item, i) => (
               <motion.div 
                 key={i}

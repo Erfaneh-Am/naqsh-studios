@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { ShoppingCart } from "lucide-react";
 import { motion, useScroll } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import logoImg from "@assets/ChatGPT_Image_May_23,_2026,_10_56_08_PM_1781333693722.png";
 
 export default function Navbar() {
   const [location] = useLocation();
@@ -29,8 +30,12 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <div className="flex-1">
-          <Link href="/" className="font-serif text-2xl tracking-widest hover:text-accent transition-colors">
-            NAQSH
+          <Link href="/" className="block" data-testid="link-logo">
+            <img
+              src={logoImg}
+              alt="Naqsh Studios"
+              className={`h-14 w-auto object-contain transition-all duration-300 ${transparent ? "brightness-0 invert" : ""}`}
+            />
           </Link>
         </div>
         
