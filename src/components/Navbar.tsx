@@ -19,11 +19,6 @@ const categories = [
     collections: ["Ambient Series", "Pendant Collection"]
   },
   {
-    category: "Mirrors",
-    desc: "Reflections framed in crafted wood",
-    collections: ["Arch Series", "Geometric Frames"]
-  },
-  {
     category: "Clocks",
     desc: "Time rendered as a decorative object",
     collections: ["Wall Clocks", "Table Clocks"]
@@ -102,7 +97,7 @@ export default function Navbar() {
                     }`}
                   >
                     <div className="max-w-7xl mx-auto px-6 py-10">
-                      <div className="grid grid-cols-5 gap-8">
+                      <div className="grid grid-cols-4 gap-8">
                         {categories.map((cat, i) => (
                           <motion.div
                             key={i}

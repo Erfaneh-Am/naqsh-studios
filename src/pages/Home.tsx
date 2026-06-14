@@ -119,25 +119,7 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Card 3: Mirrors */}
-          <Link href="/collections" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[400px] bg-card" data-testid="card-collection-mirrors">
-            <div className="absolute inset-0 bg-foreground/5" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <svg viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-32 h-40 opacity-20">
-                <rect x="10" y="10" width="100" height="140" rx="50" stroke="currentColor" strokeWidth="2"/>
-                <rect x="20" y="20" width="80" height="120" rx="40" stroke="currentColor" strokeWidth="1"/>
-                <path d="M60 35 L70 50 L60 65 L50 50 Z" stroke="currentColor" strokeWidth="1" fill="none"/>
-              </svg>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 p-8 w-full text-white">
-              <h3 className="font-serif text-3xl mb-2 transition-transform duration-500 group-hover:-translate-y-2">Mirrors</h3>
-              <p className="font-sans font-light tracking-wide text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Reflections framed in crafted wood</p>
-              <div className="w-0 h-px bg-accent mt-4 group-hover:w-12 transition-all duration-500 delay-200" />
-            </div>
-          </Link>
-
-          {/* Card 4: Clocks */}
+          {/* Card 3: Clocks */}
           <Link href="/collections" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[400px] bg-muted" data-testid="card-collection-clocks">
             <div className="absolute inset-0 flex items-center justify-center">
               <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-36 h-36 opacity-15">
@@ -156,27 +138,38 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Card 5 & 6: Home Decors + Custom Commissions */}
-          <div className="col-span-1 md:col-span-4 grid grid-rows-2 gap-6 md:gap-8 h-[400px]">
-            <Link href="/collections" className="group block relative overflow-hidden bg-foreground p-6 flex flex-col justify-end" data-testid="card-collection-home-decors">
-              <div className="absolute inset-0 opacity-10">
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                  <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" stroke="currentColor" strokeWidth="1" fill="none"/>
-                  <polygon points="50,20 80,35 80,65 50,80 20,65 20,35" stroke="currentColor" strokeWidth="1" fill="none"/>
-                  <polygon points="50,35 65,42.5 65,57.5 50,65 35,57.5 35,42.5" stroke="currentColor" strokeWidth="1" fill="none"/>
-                </svg>
-              </div>
-              <h3 className="font-serif text-2xl text-background mb-1">Home Decors</h3>
-              <p className="font-sans text-sm font-light text-background/70">Objects that complete a space</p>
-              <ArrowUpRight className="absolute top-6 right-6 w-4 h-4 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
-            </Link>
-            
-            <Link href="/collections" className="group block relative overflow-hidden bg-muted/60 border border-accent/20 p-6 flex flex-col justify-end" data-testid="card-collection-custom">
-              <h3 className="font-serif text-2xl text-foreground mb-1">Custom Commissions</h3>
-              <p className="font-sans text-sm font-light text-foreground/60">Artworks made for your space</p>
-              <ArrowUpRight className="absolute top-6 right-6 w-4 h-4 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
-            </Link>
-          </div>
+          {/* Card 4: Home Decors */}
+          <Link href="/collections" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[400px] bg-foreground" data-testid="card-collection-home-decors">
+            <div className="absolute inset-0 flex items-center justify-center opacity-10 text-background">
+              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-40 h-40">
+                <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" stroke="currentColor" strokeWidth="1" fill="none"/>
+                <polygon points="50,20 80,35 80,65 50,80 20,65 20,35" stroke="currentColor" strokeWidth="1" fill="none"/>
+                <polygon points="50,35 65,42.5 65,57.5 50,65 35,57.5 35,42.5" stroke="currentColor" strokeWidth="1" fill="none"/>
+              </svg>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 p-8 w-full text-white">
+              <h3 className="font-serif text-3xl mb-2 transition-transform duration-500 group-hover:-translate-y-2">Home Decors</h3>
+              <p className="font-sans font-light tracking-wide text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Objects that complete a considered space</p>
+              <div className="w-0 h-px bg-accent mt-4 group-hover:w-12 transition-all duration-500 delay-200" />
+            </div>
+          </Link>
+
+          {/* Card 5: Custom Commissions */}
+          <Link href="/collections" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[400px] bg-muted/60 border border-accent/20" data-testid="card-collection-custom">
+            <div className="absolute inset-0 flex items-center justify-center opacity-[0.12] text-foreground">
+              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-36 h-36">
+                <path d="M50 8 L62 38 L92 50 L62 62 L50 92 L38 62 L8 50 L38 38 Z" stroke="currentColor" strokeWidth="1" fill="none"/>
+                <circle cx="50" cy="50" r="10" stroke="currentColor" strokeWidth="1" fill="none"/>
+              </svg>
+            </div>
+            <div className="absolute bottom-0 left-0 p-8 w-full">
+              <h3 className="font-serif text-3xl text-foreground mb-2 transition-transform duration-500 group-hover:-translate-y-2">Custom Commissions</h3>
+              <p className="font-sans font-light tracking-wide text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Artworks made for your space</p>
+              <div className="w-0 h-px bg-accent mt-4 group-hover:w-12 transition-all duration-500 delay-200" />
+            </div>
+            <ArrowUpRight className="absolute top-6 right-6 w-4 h-4 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+          </Link>
         </div>
       </section>
 
