@@ -20,7 +20,7 @@ export default function About() {
         
         <div className="prose prose-lg mx-auto text-muted-foreground font-serif leading-relaxed">
           <p>
-            Naqsh Studios was born from a deep reverence for Persian architectural geometry and a conviction that handcraft belongs in contemporary interiors. Every piece is designed to live with you — to age, to catch light differently at different hours, to carry meaning.
+            Naqsh Studios was born from a deep reverence for Persian architectural geometry and a conviction that handcraft belongs in contemporary interiors. Every piece is designed to live with you, to age, to catch light differently at different hours, to carry meaning.
           </p>
           <p>
             Our process is unhurried. Each layer is considered. Each shadow is intentional.

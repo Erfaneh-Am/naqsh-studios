@@ -17,7 +17,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <img 
             src={delImg}
-            alt="Layered wooden wall art — Del, Poetry Collection" 
+            alt="Layered wooden wall art: Del, Poetry Collection"
             className="w-full h-full object-cover opacity-50 mix-blend-overlay"
           />
           <div className="absolute inset-0 bg-foreground/60" />
@@ -89,7 +89,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
           {/* Card 1 - Large: Wall Sculptures */}
           <Link href="/collections" className="group block col-span-1 md:col-span-8 relative overflow-hidden h-[600px] bg-card" data-testid="card-collection-wall-sculptures">
-            <img src={arcadeImg} alt="Wall Sculptures — Architecture Collection" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <img src={arcadeImg} alt="Wall Sculptures: Architecture Collection" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-0 left-0 p-8 w-full text-white">
               <span className="font-sans text-xs uppercase tracking-[0.25em] text-white/50 mb-2 block">Featured</span>
@@ -133,7 +133,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8 w-full text-white">
               <h3 className="font-serif text-3xl mb-2 transition-transform duration-500 group-hover:-translate-y-2">Clocks</h3>
-              <p className="font-sans font-light tracking-wide text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Time as an art form — wall and table</p>
+              <p className="font-sans font-light tracking-wide text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Time as an art form for wall and table</p>
               <div className="w-0 h-px bg-accent mt-4 group-hover:w-12 transition-all duration-500 delay-200" />
             </div>
           </Link>
@@ -208,7 +208,7 @@ export default function Home() {
             className="flex-1 w-full"
           >
             <div className="relative w-full overflow-hidden">
-              <img src={studioImg} alt="Naqsh Studios — The hands behind the work" className="w-full h-auto object-contain" />
+              <img src={studioImg} alt="Naqsh Studios: the hands behind the work" className="w-full h-auto object-contain" />
             </div>
           </motion.div>
           
@@ -229,7 +229,7 @@ export default function Home() {
               At Naqsh Studios, we believe art should do more than fill a wall. It should tell a story, evoke a feeling, and create a lasting connection.
             </p>
             <p className="text-lg font-sans font-light text-muted-foreground mb-10 leading-relaxed max-w-lg">
-              Inspired by the poetry, architecture, and cultural heritage of the Middle East, we create handcrafted wooden artworks that bridge tradition and contemporary design. Each piece is thoughtfully composed from layered wood and shaped by themes of identity, belonging, nature, and human experience — designed to bring depth, warmth, and meaning into the spaces where life unfolds.
+              Inspired by the poetry, architecture, and cultural heritage of the Middle East, we create handcrafted wooden artworks that bridge tradition and contemporary design. Each piece is thoughtfully composed from layered wood and shaped by themes of identity, belonging, nature, and human experience, designed to bring depth, warmth, and meaning into the spaces where life unfolds.
             </p>
             <Link href="/about" className="inline-flex items-center text-sm uppercase tracking-widest font-medium text-foreground hover:text-accent transition-colors">
               Meet the Studio <ArrowRight className="ml-2 w-4 h-4" />

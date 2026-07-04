@@ -14,7 +14,7 @@ export const SIZES = [
   { size: "24″ × 36″", price: "$650" },
   { size: "32″ × 48″", price: "$985" },
 ];
-export const CUSTOM_NOTE = "Custom size — contact us";
+export const CUSTOM_NOTE = "Custom size, contact us";
 
 export function orderLink(piece: Piece) {
   const subject = `Order Inquiry: ${piece.name} - ${piece.collection}`;
@@ -57,7 +57,7 @@ export const pieces: Piece[] = [
     collection: "Poetry Collection",
     name: "Heech",
     story:
-      "Where absence becomes possibility. Flowing Persian calligraphy of the concept Hich — an open invitation to reflection from every angle.",
+      "Where absence becomes possibility. Flowing Persian calligraphy of the concept Hich, an open invitation to reflection from every angle.",
   },
   {
     img: kazehImg,

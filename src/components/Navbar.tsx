@@ -10,7 +10,7 @@ import logoDark from "@assets/logo-dark.png";
 // href = where the category header (and its sub-links) point.
 // realCollections = sub-links resolve to their own /collections/:slug page
 // (only Wall Sculptures has live pieces). Otherwise every link in the group
-// goes to the category's href — the coming-soon page for lines still in the
+// goes to the category's href: the coming-soon page for lines still in the
 // making, or the full catalog for the ones that are ready.
 const categories = [
   {

@@ -32,8 +32,8 @@ export default function ComingSoonPage() {
         </h1>
 
         <p className="text-base md:text-lg font-sans font-light tracking-[0.05em] text-muted-foreground leading-relaxed mb-4 max-w-xl">
-          This collection is still on the workbench. New handcrafted pieces —
-          layered, carved, and shaped by heritage — are being made and will be
+          This collection is still on the workbench. New handcrafted pieces,
+          layered, carved, and shaped by heritage, are being made and will be
           added here soon.
         </p>
 
