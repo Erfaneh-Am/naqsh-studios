@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Collections from "@/pages/Collections";
+import ComingSoonPage from "@/pages/ComingSoon";
 import About from "@/pages/About";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -22,6 +23,7 @@ function Router() {
           <Route path="/" component={Home} />
           <Route path="/collections" component={Collections} />
           <Route path="/collections/:slug" component={Collections} />
+          <Route path="/coming-soon" component={ComingSoonPage} />
           <Route path="/about" component={About} />
           <Route component={NotFound} />
         </Switch>

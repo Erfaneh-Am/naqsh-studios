@@ -100,7 +100,7 @@ export default function Home() {
           </Link>
 
           {/* Card 2: Lamps */}
-          <Link href="/collections" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[600px] bg-primary" data-testid="card-collection-lamps">
+          <Link href="/coming-soon" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[600px] bg-primary" data-testid="card-collection-lamps">
             <div className="absolute inset-0 opacity-15">
               <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
                 <circle cx="100" cy="100" r="80" stroke="currentColor" strokeWidth="1"/>
@@ -120,7 +120,7 @@ export default function Home() {
           </Link>
 
           {/* Card 3: Clocks */}
-          <Link href="/collections" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[400px] bg-muted" data-testid="card-collection-clocks">
+          <Link href="/coming-soon" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[400px] bg-muted" data-testid="card-collection-clocks">
             <div className="absolute inset-0 flex items-center justify-center">
               <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-36 h-36 opacity-15">
                 <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="1.5"/>
@@ -156,7 +156,7 @@ export default function Home() {
           </Link>
 
           {/* Card 5: Custom Commissions */}
-          <Link href="/collections" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[400px] bg-muted/60 border border-accent/20" data-testid="card-collection-custom">
+          <Link href="/coming-soon" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[400px] bg-muted/60 border border-accent/20" data-testid="card-collection-custom">
             <div className="absolute inset-0 flex items-center justify-center opacity-[0.12] text-foreground">
               <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-36 h-36">
                 <path d="M50 8 L62 38 L92 50 L62 62 L50 92 L38 62 L8 50 L38 38 Z" stroke="currentColor" strokeWidth="1" fill="none"/>

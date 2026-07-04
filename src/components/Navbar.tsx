@@ -7,25 +7,38 @@ import { slugify } from "@/data/pieces";
 import logoImg from "@assets/ChatGPT_Image_May_23,_2026,_10_56_08_PM_1781333693722.png";
 import logoDark from "@assets/logo-dark.png";
 
+// href = where the category header (and its sub-links) point.
+// realCollections = sub-links resolve to their own /collections/:slug page
+// (only Wall Sculptures has live pieces). Otherwise every link in the group
+// goes to the category's href — the coming-soon page for lines still in the
+// making, or the full catalog for the ones that are ready.
 const categories = [
   {
     category: "Wall Sculptures",
     desc: "Dimensional wooden artworks for your walls",
+    href: "/collections",
+    realCollections: true,
     collections: ["Architecture Collection", "Poetry Collection", "Roots Collection"]
   },
   {
     category: "Lamps",
     desc: "Light sculpted by hand and heritage",
+    href: "/coming-soon",
+    realCollections: false,
     collections: ["Ambient Series", "Pendant Collection"]
   },
   {
     category: "Clocks",
     desc: "Time rendered as a decorative object",
+    href: "/coming-soon",
+    realCollections: false,
     collections: ["Wall Clocks", "Table Clocks"]
   },
   {
     category: "Home Decors",
     desc: "Objects that complete a considered space",
+    href: "/collections",
+    realCollections: false,
     collections: ["Tabletop Objects", "Shelf Sculptures"]
   }
 ];
@@ -108,7 +121,7 @@ export default function Navbar() {
                             data-testid={`dropdown-category-${i}`}
                           >
                             <Link
-                              href="/collections"
+                              href={cat.href}
                               className="block"
                               onClick={() => setShowDropdown(false)}
                             >
@@ -139,7 +152,7 @@ export default function Navbar() {
                               {cat.collections.map((col, j) => (
                                 <li key={j}>
                                   <Link
-                                    href={`/collections/${slugify(col)}`}
+                                    href={cat.realCollections ? `/collections/${slugify(col)}` : cat.href}
                                     onClick={() => setShowDropdown(false)}
                                     className={`flex items-center gap-2 text-[11px] font-sans font-light tracking-wide transition-colors cursor-pointer hover:text-accent ${
                                       transparent ? "text-background/70" : "text-muted-foreground"
