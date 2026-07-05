@@ -26,7 +26,7 @@ export default function Footer() {
           <Link href="/about" className="hover:text-foreground transition-colors">
             Our Story
           </Link>
-          <Link href="/" className="hover:text-foreground transition-colors">
+          <Link href="/contact" className="hover:text-foreground transition-colors">
             Contact
           </Link>
         </nav>

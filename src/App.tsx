@@ -7,6 +7,7 @@ import Home from "@/pages/Home";
 import Collections from "@/pages/Collections";
 import ComingSoonPage from "@/pages/ComingSoon";
 import About from "@/pages/About";
+import Contact from "@/pages/Contact";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ComingSoon from "@/components/ComingSoon";
@@ -25,6 +26,7 @@ function Router() {
           <Route path="/collections/:slug" component={Collections} />
           <Route path="/coming-soon" component={ComingSoonPage} />
           <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
           <Route component={NotFound} />
         </Switch>
       </main>
