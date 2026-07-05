@@ -6,7 +6,7 @@ import studioImg from "@assets/ChatGPT_Image_May_23,_2026,_11_17_58_PM_178133369
 const milestones = [
   {
     label: "The beginning",
-    text: "Years of painting, studying for a long time under the artist Rahim Molayan.",
+    text: "Years of painting, studying for a long time under the painter Rahim Mowlaeian.",
   },
   {
     label: "A pause",
@@ -79,9 +79,17 @@ export default function About() {
               <p>
                 I have always been an artist. For years it lived alongside
                 everything else, a second life I made room for after work, in
-                classes, at the easel. I studied painting for many years under
-                Rahim Molayan, and art stayed the constant I kept returning to,
-                no matter what else life asked of me.
+                classes, at the easel. I studied painting for many years under{" "}
+                <a
+                  href="https://www.instagram.com/rahimmowlaeian.official"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground underline decoration-accent/40 underline-offset-4 hover:text-accent transition-colors"
+                >
+                  Rahim Mowlaeian
+                </a>
+                , and art stayed the constant I kept returning to, no matter
+                what else life asked of me.
               </p>
               <p>
                 Then engineering took over. Immigrating to the United States and
