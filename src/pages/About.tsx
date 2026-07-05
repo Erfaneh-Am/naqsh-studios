@@ -79,12 +79,21 @@ export default function About() {
                 My work shifted too, from engineering into data science and
                 machine learning, yet the making never stopped. In the last two
                 years, woodworking became its center. I found a way to bring
-                painting and wood together, layering color, geometry, and
-                Persian heritage into pieces that hold light and shadow. As a
-                member of the San Diego Fine Woodworkers Association, a community
-                of over a thousand makers, I kept building. Naqsh Studios is
-                where it finally comes together: the engineer's precision, the
-                painter's eye, and a love I no longer keep on the side.
+                painting and wood together, layering color, geometry, and the
+                heritage I grew up with into pieces that hold light and shadow. I
+                am proud to be part of the{" "}
+                <a
+                  href="https://sdfwa.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground underline decoration-accent/40 underline-offset-4 hover:text-accent transition-colors"
+                >
+                  San Diego Fine Woodworkers Association
+                </a>
+                , a community of over a thousand makers whose shared craft keeps
+                pushing me forward. Naqsh Studios is where it finally comes
+                together: the engineer's precision, the painter's eye, and a love
+                I no longer keep on the side.
               </p>
             </div>
           </motion.div>
