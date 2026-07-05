@@ -229,7 +229,7 @@ export default function Home() {
               At Naqsh Studios, we believe art should do more than fill a wall. It should tell a story, evoke a feeling, and create a lasting connection.
             </p>
             <p className="text-lg font-sans font-light text-muted-foreground mb-10 leading-relaxed max-w-lg">
-              Inspired by the poetry, architecture, and cultural heritage of the Middle East, we create handcrafted wooden artworks that bridge tradition and contemporary design. Each piece is thoughtfully composed from layered wood and shaped by themes of identity, belonging, nature, and human experience, designed to bring depth, warmth, and meaning into the spaces where life unfolds.
+              Inspired by poetry, architecture, and the enduring language of geometry, we create handcrafted wooden artworks that bridge tradition and contemporary design. Each piece is thoughtfully composed from layered wood and shaped by themes of identity, belonging, nature, and human experience, designed to bring depth, warmth, and meaning into the spaces where life unfolds.
             </p>
             <Link href="/about" className="inline-flex items-center text-sm uppercase tracking-widest font-medium text-foreground hover:text-accent transition-colors">
               Meet the Studio <ArrowRight className="ml-2 w-4 h-4" />

@@ -28,7 +28,7 @@ export default function ComingSoon() {
 
         <p className="text-sm md:text-base font-sans font-light tracking-[0.1em] text-background/70 max-w-md leading-relaxed">
           Our storefront is being refined. Please check back soon for handcrafted
-          Persian-inspired wood art.
+          wood art rooted in heritage and geometry.
         </p>
 
         <div className="w-12 h-px bg-accent/50 mt-10" />

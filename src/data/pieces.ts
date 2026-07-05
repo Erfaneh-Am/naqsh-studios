@@ -50,14 +50,14 @@ export const pieces: Piece[] = [
     collection: "Architecture Collection",
     name: "Arcade",
     story:
-      "Where geometry meets stillness. Persian arches and sacred geometry reimagined through a modern minimalist lens in soft neutral and charcoal tones.",
+      "Where geometry meets stillness. Arches and sacred geometry reimagined through a modern minimalist lens in soft neutral and charcoal tones.",
   },
   {
     img: heechImg,
     collection: "Poetry Collection",
     name: "Heech",
     story:
-      "Where absence becomes possibility. Flowing Persian calligraphy of the concept Hich, an open invitation to reflection from every angle.",
+      "Where absence becomes possibility. Flowing calligraphy of the concept Hich, an open invitation to reflection from every angle.",
   },
   {
     img: kazehImg,

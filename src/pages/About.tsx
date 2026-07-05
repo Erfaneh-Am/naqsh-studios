@@ -3,29 +3,6 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import studioImg from "@assets/ChatGPT_Image_May_23,_2026,_11_17_58_PM_1781333693723.png";
 
-const milestones = [
-  {
-    label: "The beginning",
-    text: "Years of painting, studying for a long time under the painter Rahim Mowlaeian.",
-  },
-  {
-    label: "A pause",
-    text: "Immigration to the United States and a PhD in engineering left little room for art.",
-  },
-  {
-    label: "A return",
-    text: "In the quiet of the pandemic, a return to making: painting again, and first steps into wood.",
-  },
-  {
-    label: "Two lives",
-    text: "A shift from engineering into data science and machine learning, with art always kept close.",
-  },
-  {
-    label: "Naqsh",
-    text: "The last two years given to woodworking, fusing paint and wood, and joining the San Diego Fine Woodworkers Association.",
-  },
-];
-
 export default function About() {
   return (
     <div className="pt-32 pb-24 min-h-screen bg-background">
@@ -113,32 +90,6 @@ export default function About() {
           </motion.div>
         </div>
 
-        {/* Timeline */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.8 }}
-          className="border-t border-accent/20 pt-16 mb-24"
-        >
-          <h2 className="font-smallcaps text-accent tracking-[0.2em] text-lg uppercase text-center mb-12">
-            The Path Here
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-            {milestones.map((m, i) => (
-              <div key={i} className="relative">
-                <div className="w-6 h-px bg-accent mb-4" />
-                <h3 className="font-serif text-xl text-foreground mb-2">
-                  {m.label}
-                </h3>
-                <p className="font-sans text-sm font-light text-muted-foreground leading-relaxed">
-                  {m.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
         {/* Studio coda + CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -148,9 +99,9 @@ export default function About() {
           className="max-w-2xl mx-auto text-center border-t border-accent/20 pt-16"
         >
           <p className="font-serif text-lg font-light text-muted-foreground leading-relaxed mb-10">
-            Naqsh Studios was born from a deep reverence for Persian
-            architectural geometry and a conviction that handcraft belongs in
-            contemporary interiors. Every piece is designed to live with you, to
+            Naqsh Studios was born from a deep reverence for architectural
+            geometry and a conviction that handcraft belongs in contemporary
+            interiors. Every piece is designed to live with you, to
             age, to catch light differently at different hours, to carry meaning.
           </p>
           <Link
