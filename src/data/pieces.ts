@@ -43,28 +43,28 @@ export const pieces: Piece[] = [
     collection: "Roots Collection",
     name: "Sarv",
     story:
-      "Sarv is the cypress, the evergreen that stays green through the hardest winters and has long stood for endurance and quiet grace. Rooted yet reaching toward light, its branches and layered leaves unfold across architectural planes in rich burgundy and warm natural wood.",
+      "Inspired by the sarv, the cypress that stays green through the hardest winters and has long stood for endurance and quiet grace. Rooted yet reaching toward light, its branches and layered leaves unfold across architectural planes in rich burgundy and warm natural wood.",
   },
   {
     img: arcadeImg,
     collection: "Architecture Collection",
     name: "Arcade",
     story:
-      "Where architecture and heritage meet. This piece is a study of the quiet engineering behind old arches, the point where structure becomes beauty, with sacred geometry reimagined through a modern minimalist lens in soft neutral and charcoal tones.",
+      "Inspired by the quiet engineering behind old arches, the point where architecture and heritage meet and structure becomes beauty. Sacred geometry reimagined through a modern minimalist lens in soft neutral and charcoal tones.",
   },
   {
     img: heechImg,
     collection: "Poetry Collection",
     name: "Heech",
     story:
-      "Heech means nothing. The modern master Parviz Tanavoli spent a lifetime turning that one word into sculpture, finding, in the spirit of Sufi thought, that nothingness can hold everything. This is my own conversation with that idea: flowing calligraphy of Heech, where emptiness becomes an open invitation to reflection from every angle.",
+      "Inspired by Parviz Tanavoli, the modern master who spent a lifetime turning heech, the word for nothing, into sculpture, finding in the spirit of Sufi thought that nothingness can hold everything. This is my own conversation with that idea: flowing calligraphy of Heech, where emptiness becomes an open invitation to reflection from every angle.",
   },
   {
     img: kazehImg,
     collection: "Poetry Collection",
     name: "Kazheh",
     story:
-      "Kazheh is an old Kurdish and Persian word for the one who brings you comfort and calm, whom you trust and feel at home with. Here it takes form in layered calligraphy framed by architectural arches, held in a calm, stable blue.",
+      "Inspired by kazheh, an old Kurdish and Persian word for the one who brings you comfort and calm, whom you trust and feel at home with. Here it takes form in layered calligraphy framed by architectural arches, held in a calm, stable blue.",
   },
 ];
 
