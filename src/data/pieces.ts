@@ -64,7 +64,7 @@ export const pieces: Piece[] = [
     collection: "Poetry Collection",
     name: "Kazheh",
     story:
-      "A place of safety, a presence of trust. Layered calligraphy framed by architectural arches in calm, stable blue.",
+      "Kazheh is an old Kurdish and Persian word for a shelter, a safe haven built in hard, remote places so that travelers could rest and find their way through. In time it came to mean a person too: the one who brings you comfort and calm, whom you trust and feel at home with. Here it takes form in layered calligraphy framed by architectural arches, held in a calm, stable blue.",
   },
 ];
 
