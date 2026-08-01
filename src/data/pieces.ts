@@ -51,7 +51,7 @@ export const pieces: Piece[] = [
   {
     img: sarvImg,
     collection: "Roots Collection",
-    name: "Sarv",
+    name: "Rooted in Grace",
     story:
       "Inspired by the sarv, the cypress that stays green through the hardest winters and has long stood for endurance and quiet grace. Rooted yet reaching toward light, its branches and layered leaves unfold across architectural planes in rich burgundy and warm natural wood.",
     sizes: STANDARD_SIZES,
@@ -59,7 +59,7 @@ export const pieces: Piece[] = [
   {
     img: arcadeImg,
     collection: "Architecture Collection",
-    name: "Arcade",
+    name: "Geometry in Stillness",
     story:
       "Inspired by the quiet engineering behind old arches, the point where architecture and heritage meet and structure becomes beauty. Sacred geometry reimagined through a modern minimalist lens in soft neutral and charcoal tones.",
     sizes: DETAILED_SIZES,
@@ -67,7 +67,7 @@ export const pieces: Piece[] = [
   {
     img: heechImg,
     collection: "Poetry Collection",
-    name: "Heech",
+    name: "The Shape of Nothing",
     story:
       "Inspired by Parviz Tanavoli, the modern master who spent a lifetime turning heech, the word for nothing, into sculpture, finding in the spirit of Sufi thought that nothingness can hold everything. This is my own conversation with that idea: flowing calligraphy of Heech, where emptiness becomes an open invitation to reflection from every angle.",
     sizes: STANDARD_SIZES,
@@ -75,7 +75,7 @@ export const pieces: Piece[] = [
   {
     img: kazehImg,
     collection: "Poetry Collection",
-    name: "Kazheh",
+    name: "A Presence Like Home",
     story:
       "Inspired by kazheh, an old Kurdish and Persian word for the one who brings you comfort and calm, whom you trust and feel at home with. Here it takes form in layered calligraphy framed by architectural arches, held in a calm, stable blue.",
     sizes: DETAILED_SIZES,
