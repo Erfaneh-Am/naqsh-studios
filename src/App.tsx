@@ -6,6 +6,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Collections from "@/pages/Collections";
 import ComingSoonPage from "@/pages/ComingSoon";
+import Commissions from "@/pages/Commissions";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Navbar from "@/components/Navbar";
@@ -25,6 +26,7 @@ function Router() {
           <Route path="/collections" component={Collections} />
           <Route path="/collections/:slug" component={Collections} />
           <Route path="/coming-soon" component={ComingSoonPage} />
+          <Route path="/commissions" component={Commissions} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
           <Route component={NotFound} />

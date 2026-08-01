@@ -3,14 +3,12 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import PieceGrid from "@/components/PieceGrid";
+import NewsletterForm from "@/components/NewsletterForm";
 import { pieces } from "@/data/pieces";
 import arcadeImg from "@assets/arcade_1781333629648.png";
 import delImg from "@assets/EF6BD3BA-F69A-4E6D-919D-359F3307C5A5_1781372629100.png";
 import studioImg from "@assets/artist-portrait.jpg";
 import logoDark from "@assets/logo-dark.png";
-
-const COMMISSION_MAILTO =
-  "mailto:erin@naqsh-studios.com?subject=Commission%20Inquiry%20-%20Naqsh%20Studios";
 
 export default function Home() {
   return (
@@ -160,7 +158,7 @@ export default function Home() {
           </Link>
 
           {/* Card 5: Custom Commissions */}
-          <Link href="/coming-soon" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[400px] bg-muted/60 border border-accent/20" data-testid="card-collection-custom">
+          <Link href="/commissions" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[400px] bg-muted/60 border border-accent/20" data-testid="card-collection-custom">
             <div className="absolute inset-0 flex items-center justify-center opacity-[0.12] text-foreground">
               <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-36 h-36">
                 <path d="M50 8 L62 38 L92 50 L62 62 L50 92 L38 62 L8 50 L38 38 Z" stroke="currentColor" strokeWidth="1" fill="none"/>
@@ -277,7 +275,7 @@ export default function Home() {
               variant="outline"
               className="rounded-none border border-accent text-accent hover:bg-accent hover:text-foreground uppercase tracking-widest text-sm h-14 px-10 bg-transparent"
             >
-              <a href={COMMISSION_MAILTO}>Start a Commission</a>
+              <Link href="/commissions">Start a Commission</Link>
             </Button>
           </motion.div>
         </div>
@@ -342,20 +340,7 @@ export default function Home() {
               Exclusive releases. Limited collections. New artwork announcements.
             </p>
             
-            <form className="flex flex-col sm:flex-row gap-4" onSubmit={(e) => e.preventDefault()}>
-              <input 
-                type="email" 
-                placeholder="YOUR EMAIL ADDRESS" 
-                className="flex-grow bg-card border border-border px-6 h-14 text-sm tracking-widest uppercase focus:outline-none focus:border-accent transition-colors font-light placeholder:text-muted-foreground/60"
-                required
-              />
-              <Button 
-                type="submit"
-                className="rounded-none bg-primary text-primary-foreground hover:bg-foreground uppercase tracking-widest text-sm h-14 px-10"
-              >
-                Join
-              </Button>
-            </form>
+            <NewsletterForm />
           </motion.div>
         </div>
       </section>
