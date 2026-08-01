@@ -9,6 +9,9 @@ import delImg from "@assets/EF6BD3BA-F69A-4E6D-919D-359F3307C5A5_1781372629100.p
 import studioImg from "@assets/artist-portrait.jpg";
 import logoDark from "@assets/logo-dark.png";
 
+const COMMISSION_MAILTO =
+  "mailto:erin@naqsh-studios.com?subject=Commission%20Inquiry%20-%20Naqsh%20Studios";
+
 export default function Home() {
   return (
     <div className="bg-background min-h-screen text-foreground overflow-hidden">
@@ -54,11 +57,12 @@ export default function Home() {
             transition={{ duration: 1, delay: 1.3 }}
           >
             <Button
+              asChild
               variant="outline"
               className="rounded-none border border-accent text-accent hover:bg-accent hover:text-foreground uppercase tracking-widest text-sm h-14 px-10"
               data-testid="button-shop-collection"
             >
-              Shop Collection
+              <Link href="/collections">Shop Collection</Link>
             </Button>
             <Link href="/about" className="group flex items-center text-sm uppercase tracking-widest font-medium text-background/70 hover:text-accent transition-colors" data-testid="link-our-story">
               Our Story <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -268,11 +272,12 @@ export default function Home() {
               </div>
             </div>
             
-            <Button 
-              variant="outline" 
+            <Button
+              asChild
+              variant="outline"
               className="rounded-none border border-accent text-accent hover:bg-accent hover:text-foreground uppercase tracking-widest text-sm h-14 px-10 bg-transparent"
             >
-              Start a Commission
+              <a href={COMMISSION_MAILTO}>Start a Commission</a>
             </Button>
           </motion.div>
         </div>
