@@ -2,34 +2,38 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { STANDARD_SIZES, DETAILED_SIZES, pieces } from "@/data/pieces";
 import { submitForm } from "@/lib/formsubmit";
 
 const STEPS = [
   {
     n: "I",
-    title: "Tell me about the space",
-    body: "The wall, the light it gets, the colors already in the room, and the feeling you want the piece to carry.",
+    title: "Tell me what you have in mind",
+    body: "The kind of piece, the space it will live in, the light it gets, the colors already around it, and the feeling you want it to carry.",
   },
   {
     n: "II",
     title: "We settle the design",
-    body: "Any existing work can be scaled, recolored, or reworked for your wall, or we can start from something new.",
+    body: "Any existing piece can be scaled, recolored, or reworked for your space, or we can start from something entirely new.",
   },
   {
     n: "III",
     title: "I make it",
-    body: "Each piece is cut, layered, painted, and finished by hand in my studio in San Diego.",
+    body: "Cut, layered, painted, and finished by hand in my studio in San Diego.",
   },
   {
     n: "IV",
-    title: "It arrives ready to hang",
-    body: "Framed and finished, with everything you need to put it on the wall.",
+    title: "It arrives finished",
+    body: "Complete and ready to live in your space.",
   },
 ];
 
-const tierName = (sizes: typeof STANDARD_SIZES) =>
-  pieces.filter((p) => p.sizes === sizes).map((p) => p.name).join(" · ");
+const PIECE_TYPES = [
+  "Wall piece",
+  "Lamp",
+  "Clock",
+  "Something for the home",
+  "Not sure yet",
+];
 
 export default function Commissions() {
   const [sent, setSent] = useState(false);
@@ -46,6 +50,7 @@ export default function Commissions() {
       {
         name: String(data.get("name") || ""),
         email: String(data.get("email") || ""),
+        type: String(data.get("type") || ""),
         size: String(data.get("size") || ""),
         space: String(data.get("space") || ""),
         message: String(data.get("message") || ""),
@@ -73,18 +78,19 @@ export default function Commissions() {
             Custom Commissions
           </span>
           <h1 className="text-4xl md:text-6xl font-serif font-light text-foreground leading-tight mb-8">
-            Made for your wall
+            Made for your space
           </h1>
           <p className="text-lg font-sans font-light text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Every piece I make is made to order. Any of the works in the collection can be
-            scaled, recolored, or reworked for a particular wall, and I take on new
-            designs as well. Tell me the space, the light, and the feeling you are after,
-            and I will take it from there.
+            Everything I make is made to order. A wall piece, a lamp, a clock, an object
+            for the home, or something that does not exist yet. Any existing design can be
+            scaled, recolored, or reworked for your space, and I take on new ideas as
+            well. Tell me the space, the light, and the feeling you are after, and I will
+            take it from there.
           </p>
         </motion.div>
 
         {/* Process */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-14 gap-y-12 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-14 gap-y-12 mb-20">
           {STEPS.map((step) => (
             <div key={step.n}>
               <span className="font-serif text-accent text-xl block mb-3">{step.n}</span>
@@ -96,34 +102,15 @@ export default function Commissions() {
           ))}
         </div>
 
-        {/* Sizes and pricing */}
-        <div className="border-t border-accent/20 pt-14 mb-24">
-          <span className="font-smallcaps text-accent tracking-[0.25em] text-sm uppercase block mb-8">
-            Sizes &amp; Pricing
-          </span>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-14 gap-y-10">
-            {[STANDARD_SIZES, DETAILED_SIZES].map((tier, i) => (
-              <div key={i}>
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-5">
-                  {tierName(tier)}
-                </p>
-                <ul>
-                  {tier.map((s) => (
-                    <li
-                      key={s.size}
-                      className="flex justify-between items-baseline border-b border-border py-3"
-                    >
-                      <span className="font-serif text-lg text-foreground">{s.size}</span>
-                      <span className="font-serif text-lg text-foreground">{s.price}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <p className="font-sans font-light text-muted-foreground mt-8">
-            Working outside these two sizes is welcome. Tell me the dimensions in the form
-            below and I will quote it.
+        <div className="border-t border-accent/20 pt-10 mb-20">
+          <p className="font-sans font-light text-muted-foreground leading-relaxed max-w-2xl">
+            Because every commission is different in size, material, and detail, each one
+            is quoted on its own. Send me what you are imagining and I will come back to
+            you with a price. If you would like a sense of where my work sits, the{" "}
+            <Link href="/collections" className="text-foreground hover:text-accent transition-colors">
+              collection
+            </Link>{" "}
+            lists sizes and prices for the pieces available now.
           </p>
         </div>
 
@@ -164,14 +151,29 @@ export default function Commissions() {
                   required
                 />
               </div>
+              <select
+                name="type"
+                defaultValue=""
+                className={`${field} text-muted-foreground/60 focus:text-foreground [&:valid]:text-foreground`}
+                required
+              >
+                <option value="" disabled>
+                  What kind of piece?
+                </option>
+                {PIECE_TYPES.map((t) => (
+                  <option key={t} value={t} className="text-foreground">
+                    {t}
+                  </option>
+                ))}
+              </select>
               <input
                 name="size"
-                placeholder="Size you have in mind (or the wall dimensions)"
+                placeholder="Size or dimensions you have in mind"
                 className={field}
               />
               <input
                 name="space"
-                placeholder="The room and its light"
+                placeholder="The space it will live in and its light"
                 className={field}
               />
               <textarea
