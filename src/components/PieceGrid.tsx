@@ -9,7 +9,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { type Piece, SIZES, CUSTOM_NOTE, orderLink, slugify } from "@/data/pieces";
+import { type Piece, CUSTOM_NOTE, orderLink, slugify } from "@/data/pieces";
 
 export default function PieceGrid({ pieces }: { pieces: Piece[] }) {
   const [selected, setSelected] = useState<Piece | null>(null);
@@ -89,7 +89,7 @@ export default function PieceGrid({ pieces }: { pieces: Piece[] }) {
                     Sizes &amp; Pricing
                   </span>
                   <ul className="space-y-3">
-                    {SIZES.map((s) => (
+                    {selected.sizes.map((s) => (
                       <li
                         key={s.size}
                         className="flex items-baseline justify-between border-b border-border/50 pb-2"

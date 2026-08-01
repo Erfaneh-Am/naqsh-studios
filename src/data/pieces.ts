@@ -3,17 +3,27 @@ import heechImg from "@assets/heech_1781333629653.png";
 import sarvImg from "@assets/sarv_1781333629654.png";
 import kazehImg from "@assets/EF6BD3BA-F69A-4E6D-919D-359F3307C5A5_1781372629100.png";
 
+export type SizeOption = { size: string; price: string };
+
 export type Piece = {
   img: string;
   collection: string;
   name: string;
   story: string;
+  sizes: SizeOption[];
 };
 
-export const SIZES = [
+export const STANDARD_SIZES: SizeOption[] = [
   { size: "24″ × 36″", price: "$650" },
-  { size: "32″ × 48″", price: "$985" },
+  { size: "32″ × 48″", price: "$1,000" },
 ];
+
+// Pieces carrying dense hand-cut detail take far longer to make and sit a tier up.
+export const DETAILED_SIZES: SizeOption[] = [
+  { size: "24″ × 36″", price: "$1,100" },
+  { size: "32″ × 48″", price: "$1,700" },
+];
+
 export const CUSTOM_NOTE = "Custom size, contact us";
 
 export function orderLink(piece: Piece) {
@@ -44,6 +54,7 @@ export const pieces: Piece[] = [
     name: "Sarv",
     story:
       "Inspired by the sarv, the cypress that stays green through the hardest winters and has long stood for endurance and quiet grace. Rooted yet reaching toward light, its branches and layered leaves unfold across architectural planes in rich burgundy and warm natural wood.",
+    sizes: STANDARD_SIZES,
   },
   {
     img: arcadeImg,
@@ -51,6 +62,7 @@ export const pieces: Piece[] = [
     name: "Arcade",
     story:
       "Inspired by the quiet engineering behind old arches, the point where architecture and heritage meet and structure becomes beauty. Sacred geometry reimagined through a modern minimalist lens in soft neutral and charcoal tones.",
+    sizes: DETAILED_SIZES,
   },
   {
     img: heechImg,
@@ -58,6 +70,7 @@ export const pieces: Piece[] = [
     name: "Heech",
     story:
       "Inspired by Parviz Tanavoli, the modern master who spent a lifetime turning heech, the word for nothing, into sculpture, finding in the spirit of Sufi thought that nothingness can hold everything. This is my own conversation with that idea: flowing calligraphy of Heech, where emptiness becomes an open invitation to reflection from every angle.",
+    sizes: STANDARD_SIZES,
   },
   {
     img: kazehImg,
@@ -65,6 +78,7 @@ export const pieces: Piece[] = [
     name: "Kazheh",
     story:
       "Inspired by kazheh, an old Kurdish and Persian word for the one who brings you comfort and calm, whom you trust and feel at home with. Here it takes form in layered calligraphy framed by architectural arches, held in a calm, stable blue.",
+    sizes: DETAILED_SIZES,
   },
 ];
 

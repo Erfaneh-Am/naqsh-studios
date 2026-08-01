@@ -6,7 +6,7 @@ import PieceGrid from "@/components/PieceGrid";
 import { pieces } from "@/data/pieces";
 import arcadeImg from "@assets/arcade_1781333629648.png";
 import delImg from "@assets/EF6BD3BA-F69A-4E6D-919D-359F3307C5A5_1781372629100.png";
-import studioImg from "@assets/ChatGPT_Image_May_23,_2026,_11_17_58_PM_1781333693723.png";
+import studioImg from "@assets/studio-portrait.png";
 import logoDark from "@assets/logo-dark.png";
 
 export default function Home() {

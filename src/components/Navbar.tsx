@@ -10,7 +10,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import logoImg from "@assets/ChatGPT_Image_May_23,_2026,_10_56_08_PM_1781333693722.png";
+import logoImg from "@assets/logo-lockup.png";
 import logoDark from "@assets/logo-dark.png";
 
 const INQUIRE_MAILTO =

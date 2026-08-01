@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
-import studioImg from "@assets/ChatGPT_Image_May_23,_2026,_11_17_58_PM_1781333693723.png";
+import studioImg from "@assets/studio-portrait.png";
 
 export default function About() {
   return (
