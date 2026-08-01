@@ -14,14 +14,14 @@ export type Piece = {
 };
 
 export const STANDARD_SIZES: SizeOption[] = [
-  { size: "24″ × 36″", price: "$650" },
-  { size: "32″ × 48″", price: "$1,000" },
+  { size: "24″ × 36″", price: "$1,050" },
+  { size: "32″ × 48″", price: "$1,650" },
 ];
 
 // Pieces carrying dense hand-cut detail take far longer to make and sit a tier up.
 export const DETAILED_SIZES: SizeOption[] = [
-  { size: "24″ × 36″", price: "$1,100" },
-  { size: "32″ × 48″", price: "$1,700" },
+  { size: "24″ × 36″", price: "$1,550" },
+  { size: "32″ × 48″", price: "$2,400" },
 ];
 
 export const CUSTOM_NOTE = "Custom size, contact us";
