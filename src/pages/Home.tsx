@@ -6,7 +6,7 @@ import PieceGrid from "@/components/PieceGrid";
 import { pieces } from "@/data/pieces";
 import arcadeImg from "@assets/arcade_1781333629648.png";
 import delImg from "@assets/EF6BD3BA-F69A-4E6D-919D-359F3307C5A5_1781372629100.png";
-import studioImg from "@assets/studio-portrait.png";
+import studioImg from "@assets/artist-portrait.jpg";
 import logoDark from "@assets/logo-dark.png";
 
 export default function Home() {
@@ -208,7 +208,7 @@ export default function Home() {
             className="flex-1 w-full"
           >
             <div className="relative w-full overflow-hidden">
-              <img src={studioImg} alt="Naqsh Studios: the hands behind the work" className="w-full h-auto object-contain" />
+              <img src={studioImg} alt="Erin Amoueyan, founder of Naqsh Studios" className="w-full h-auto object-contain" />
             </div>
           </motion.div>
           

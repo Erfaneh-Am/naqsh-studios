@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
-import studioImg from "@assets/studio-portrait.png";
+import studioImg from "@assets/artist-portrait.jpg";
 
 export default function About() {
   return (
@@ -33,7 +33,7 @@ export default function About() {
             <div className="relative w-full overflow-hidden">
               <img
                 src={studioImg}
-                alt="Erfaneh, founder of Naqsh Studios"
+                alt="Erin Amoueyan, founder of Naqsh Studios"
                 className="w-full h-auto object-cover"
               />
             </div>
