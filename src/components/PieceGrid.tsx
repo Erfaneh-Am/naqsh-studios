@@ -13,6 +13,13 @@ import { type Piece, CUSTOM_NOTE, orderLink, slugify } from "@/data/pieces";
 
 export default function PieceGrid({ pieces }: { pieces: Piece[] }) {
   const [selected, setSelected] = useState<Piece | null>(null);
+  const [view, setView] = useState(0);
+
+  const open = (piece: Piece) => {
+    setView(0);
+    setSelected(piece);
+  };
+  const views = selected ? [selected.img, ...(selected.gallery ?? [])] : [];
 
   return (
     <>
@@ -29,7 +36,7 @@ export default function PieceGrid({ pieces }: { pieces: Piece[] }) {
           >
             <button
               type="button"
-              onClick={() => setSelected(piece)}
+              onClick={() => open(piece)}
               className="block text-left focus:outline-none"
               data-testid={`piece-open-${i}`}
             >
@@ -50,7 +57,7 @@ export default function PieceGrid({ pieces }: { pieces: Piece[] }) {
             </Link>
             <button
               type="button"
-              onClick={() => setSelected(piece)}
+              onClick={() => open(piece)}
               className="text-left focus:outline-none"
             >
               <h3 className="font-serif text-2xl text-foreground mb-2">{piece.name}</h3>
@@ -66,12 +73,32 @@ export default function PieceGrid({ pieces }: { pieces: Piece[] }) {
         <DialogContent className="max-w-3xl p-0 gap-0 bg-background border-border max-h-[90vh] overflow-y-auto">
           {selected && (
             <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="relative aspect-[3/4] md:aspect-auto bg-muted">
-                <img
-                  src={selected.img}
-                  alt={selected.name}
-                  className="w-full h-full object-cover"
-                />
+              <div className="relative bg-muted flex flex-col">
+                <div className="relative aspect-[3/4] md:flex-1 md:aspect-auto overflow-hidden">
+                  <img
+                    src={views[view] ?? selected.img}
+                    alt={selected.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {views.length > 1 && (
+                  <div className="flex gap-2 p-3 bg-background/60">
+                    {views.map((src, vi) => (
+                      <button
+                        key={src}
+                        type="button"
+                        onClick={() => setView(vi)}
+                        aria-label={`View ${vi + 1} of ${selected.name}`}
+                        className={`w-14 h-14 overflow-hidden border transition-colors ${
+                          vi === view ? "border-accent" : "border-transparent hover:border-border"
+                        }`}
+                        data-testid={`piece-view-${vi}`}
+                      >
+                        <img src={src} alt="" className="w-full h-full object-cover" />
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
               <div className="p-8 md:p-10 flex flex-col">
                 <span className="font-sans text-xs uppercase tracking-[0.25em] text-accent/70 mb-2 block">

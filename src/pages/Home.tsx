@@ -122,7 +122,7 @@ export default function Home() {
           </Link>
 
           {/* Card 3: Clocks */}
-          <Link href="/coming-soon" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[400px] bg-muted" data-testid="card-collection-clocks">
+          <Link href="/collections/clocks" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[400px] bg-muted" data-testid="card-collection-clocks">
             <div className="absolute inset-0 flex items-center justify-center">
               <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-36 h-36 opacity-15">
                 <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="1.5"/>

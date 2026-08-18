@@ -2,11 +2,17 @@ import arcadeImg from "@assets/arcade_1781333629648.png";
 import heechImg from "@assets/heech_1781333629653.png";
 import sarvImg from "@assets/sarv_1781333629654.png";
 import kazehImg from "@assets/EF6BD3BA-F69A-4E6D-919D-359F3307C5A5_1781372629100.png";
+import clockRoomImg from "@assets/worldmap-clock-room.jpg";
+import clockDetailImg from "@assets/worldmap-clock-detail.jpg";
+import clockStyledImg from "@assets/worldmap-clock-styled.jpg";
 
 export type SizeOption = { size: string; price: string };
 
 export type Piece = {
   img: string;
+  // Extra views shown alongside `img` in the detail dialog. Optional: most pieces
+  // are photographed once.
+  gallery?: string[];
   collection: string;
   name: string;
   story: string;
@@ -22,6 +28,14 @@ export const STANDARD_SIZES: SizeOption[] = [
 export const DETAILED_SIZES: SizeOption[] = [
   { size: "24″ × 36″", price: "$1,550" },
   { size: "32″ × 48″", price: "$2,400" },
+];
+
+// Clocks carry a movement, brass hands, a pendulum and recessed mounting on top of
+// the same hand-cut layering, so they price above a flat wall piece of equal area.
+export const CLOCK_SIZES: SizeOption[] = [
+  { size: "24″ × 24″", price: "$1,585" },
+  { size: "28″ × 28″", price: "$1,850" },
+  { size: "32″ × 32″", price: "$2,150" },
 ];
 
 export const CUSTOM_NOTE = "Custom size, contact us";
@@ -80,6 +94,15 @@ export const pieces: Piece[] = [
       "Inspired by kazheh, an old Kurdish and Persian word for the one who brings you comfort and calm, whom you trust and feel at home with. Here it takes form in layered calligraphy framed by architectural arches, held in a calm, stable blue.",
     sizes: DETAILED_SIZES,
   },
+  {
+    img: clockRoomImg,
+    gallery: [clockDetailImg, clockStyledImg],
+    collection: "Clocks",
+    name: "A World in Motion",
+    story:
+      "Inspired by the pull of somewhere else. Continents rise in gold leaf over oceans cut in five layers of deep blue and teal, and an offset navy face keeps the hour while a pendulum swings below. A working clock, made the way a wall piece is made: layer over layer, entirely by hand.",
+    sizes: CLOCK_SIZES,
+  },
 ];
 
 // Display order for collection listings / filters.
@@ -87,6 +110,7 @@ export const collectionOrder = [
   "Roots Collection",
   "Architecture Collection",
   "Poetry Collection",
+  "Clocks",
 ];
 
 // Only collections that actually have pieces, in display order.
