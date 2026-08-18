@@ -100,7 +100,7 @@ export const pieces: Piece[] = [
     collection: "Clocks",
     name: "A World in Motion",
     story:
-      "Inspired by the pull of somewhere else. Continents rise in gold leaf over oceans cut in five layers of deep blue and teal, and an offset navy face keeps the hour while a pendulum swings below. A working clock, made the way a wall piece is made: layer over layer, entirely by hand.",
+      "Inspired by the pull of somewhere else. Continents rise in gold leaf over oceans cut in five layers of deep blue and teal, and an offset navy face keeps the hour while a pendulum swings below. Handmade, and a working clock.",
     sizes: CLOCK_SIZES,
   },
 ];
