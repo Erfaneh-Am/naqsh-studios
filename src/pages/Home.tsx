@@ -6,6 +6,7 @@ import PieceGrid from "@/components/PieceGrid";
 import NewsletterForm from "@/components/NewsletterForm";
 import { pieces } from "@/data/pieces";
 import arcadeImg from "@assets/arcade_1781333629648.png";
+import clockImg from "@assets/worldmap-clock-room.jpg";
 import delImg from "@assets/EF6BD3BA-F69A-4E6D-919D-359F3307C5A5_1781372629100.png";
 import studioImg from "@assets/artist-portrait.jpg";
 import logoDark from "@assets/logo-dark.png";
@@ -101,38 +102,11 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Card 2: Lamps */}
-          <Link href="/coming-soon" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[600px] bg-primary" data-testid="card-collection-lamps">
-            <div className="absolute inset-0 opacity-15">
-              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <circle cx="100" cy="100" r="80" stroke="currentColor" strokeWidth="1"/>
-                <circle cx="100" cy="100" r="50" stroke="currentColor" strokeWidth="1"/>
-                <circle cx="100" cy="100" r="20" stroke="currentColor" strokeWidth="1"/>
-                <line x1="100" y1="20" x2="100" y2="180" stroke="currentColor" strokeWidth="0.5"/>
-                <line x1="20" y1="100" x2="180" y2="100" stroke="currentColor" strokeWidth="0.5"/>
-                <line x1="43" y1="43" x2="157" y2="157" stroke="currentColor" strokeWidth="0.5"/>
-                <line x1="157" y1="43" x2="43" y2="157" stroke="currentColor" strokeWidth="0.5"/>
-              </svg>
-            </div>
-            <div className="absolute inset-0 flex flex-col justify-end p-8 text-background">
-              <h3 className="font-serif text-3xl mb-2 transition-transform duration-500 group-hover:-translate-y-2">Lamps</h3>
-              <p className="font-sans font-light tracking-wide text-background/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Light sculpted by hand, shaped by heritage</p>
-              <div className="w-0 h-px bg-accent mt-4 group-hover:w-12 transition-all duration-500 delay-200" />
-            </div>
-          </Link>
-
-          {/* Card 3: Clocks */}
-          <Link href="/collections/clocks" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[400px] bg-muted" data-testid="card-collection-clocks">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-36 h-36 opacity-15">
-                <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="1.5"/>
-                <circle cx="50" cy="50" r="35" stroke="currentColor" strokeWidth="0.5"/>
-                <line x1="50" y1="20" x2="50" y2="35" stroke="currentColor" strokeWidth="2"/>
-                <line x1="50" y1="50" x2="65" y2="55" stroke="currentColor" strokeWidth="1.5"/>
-                <circle cx="50" cy="50" r="2" fill="currentColor"/>
-              </svg>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          {/* Card 2: Clocks. Lamps and Home Decors are held back until there is a
+              piece to show; restore them from git history when they exist. */}
+          <Link href="/collections/clocks" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[600px] bg-muted" data-testid="card-collection-clocks">
+            <img src={clockImg} alt="Clocks: A World in Motion, layered wooden world map clock" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-0 left-0 p-8 w-full text-white">
               <h3 className="font-serif text-3xl mb-2 transition-transform duration-500 group-hover:-translate-y-2">Clocks</h3>
               <p className="font-sans font-light tracking-wide text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Time as an art form for wall and table</p>
@@ -140,35 +114,20 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Card 4: Home Decors */}
-          <Link href="/collections" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[400px] bg-foreground" data-testid="card-collection-home-decors">
-            <div className="absolute inset-0 flex items-center justify-center opacity-10 text-background">
-              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-40 h-40">
-                <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" stroke="currentColor" strokeWidth="1" fill="none"/>
-                <polygon points="50,20 80,35 80,65 50,80 20,65 20,35" stroke="currentColor" strokeWidth="1" fill="none"/>
-                <polygon points="50,35 65,42.5 65,57.5 50,65 35,57.5 35,42.5" stroke="currentColor" strokeWidth="1" fill="none"/>
-              </svg>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 p-8 w-full text-white">
-              <h3 className="font-serif text-3xl mb-2 transition-transform duration-500 group-hover:-translate-y-2">Home Decors</h3>
-              <p className="font-sans font-light tracking-wide text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Objects that complete a considered space</p>
-              <div className="w-0 h-px bg-accent mt-4 group-hover:w-12 transition-all duration-500 delay-200" />
-            </div>
-          </Link>
-
-          {/* Card 5: Custom Commissions */}
-          <Link href="/commissions" className="group block col-span-1 md:col-span-4 relative overflow-hidden h-[400px] bg-muted/60 border border-accent/20" data-testid="card-collection-custom">
-            <div className="absolute inset-0 flex items-center justify-center opacity-[0.12] text-foreground">
-              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-36 h-36">
+          {/* Card 3: Custom Commissions */}
+          {/* Full width, so this one is centered and reads without a hover: a wide
+              quiet band with its copy hiding in a corner just looks unfinished. */}
+          <Link href="/commissions" className="group block col-span-1 md:col-span-12 relative overflow-hidden h-[260px] bg-muted/60 border border-accent/20" data-testid="card-collection-custom">
+            <div className="absolute inset-0 flex items-center justify-center opacity-[0.07] text-foreground">
+              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-[190px] w-[190px]">
                 <path d="M50 8 L62 38 L92 50 L62 62 L50 92 L38 62 L8 50 L38 38 Z" stroke="currentColor" strokeWidth="1" fill="none"/>
                 <circle cx="50" cy="50" r="10" stroke="currentColor" strokeWidth="1" fill="none"/>
               </svg>
             </div>
-            <div className="absolute bottom-0 left-0 p-8 w-full">
-              <h3 className="font-serif text-3xl text-foreground mb-2 transition-transform duration-500 group-hover:-translate-y-2">Custom Commissions</h3>
-              <p className="font-sans font-light tracking-wide text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Artworks made for your space</p>
-              <div className="w-0 h-px bg-accent mt-4 group-hover:w-12 transition-all duration-500 delay-200" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center px-8 text-center">
+              <h3 className="font-serif text-3xl text-foreground mb-3 transition-transform duration-500 group-hover:-translate-y-1">Custom Commissions</h3>
+              <p className="font-sans font-light tracking-wide text-muted-foreground">Artworks made for your space</p>
+              <div className="w-12 h-px bg-accent/40 mt-6 group-hover:w-24 group-hover:bg-accent transition-all duration-500" />
             </div>
             <ArrowUpRight className="absolute top-6 right-6 w-4 h-4 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
           </Link>
