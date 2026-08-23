@@ -17,6 +17,10 @@ export type Piece = {
   name: string;
   story: string;
   sizes: SizeOption[];
+  // Live Etsy listing. Checkout happens there, so this is the primary buy path.
+  // Bare-ID form on purpose: Etsy appends its own slug and the link keeps working
+  // even if the listing title is edited later.
+  etsyId?: string;
 };
 
 export const STANDARD_SIZES: SizeOption[] = [
@@ -40,9 +44,17 @@ export const CLOCK_SIZES: SizeOption[] = [
 
 export const CUSTOM_NOTE = "Custom size, contact us";
 
+export const ETSY_SHOP_URL = "https://www.etsy.com/shop/NaqshStudiosArt";
+
+// The listed sizes are bought on Etsy. Anything custom still comes to Erin by email,
+// so both paths stay live: `buyLink` for the standard sizes, `orderLink` for the rest.
+export function buyLink(piece: Piece) {
+  return piece.etsyId ? `https://www.etsy.com/listing/${piece.etsyId}` : orderLink(piece);
+}
+
 export function orderLink(piece: Piece) {
-  const subject = `Order Inquiry: ${piece.name} - ${piece.collection}`;
-  const body = `Hi Erin,\n\nI'd like to order ${piece.name}.\nPreferred size: [24x36 / 32x48 / custom]\n\nThanks,`;
+  const subject = `Custom size inquiry: ${piece.name} - ${piece.collection}`;
+  const body = `Hi Erin,\n\nI'd like ${piece.name} in a custom size.\nRough dimensions I have in mind:\n\nThanks,`;
   return `mailto:erin@naqsh-studios.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
@@ -69,6 +81,7 @@ export const pieces: Piece[] = [
     story:
       "Inspired by the sarv, the cypress that stays green through the hardest winters and has long stood for endurance and quiet grace. Rooted yet reaching toward light, its branches and layered leaves unfold across architectural planes in rich burgundy and warm natural wood.",
     sizes: STANDARD_SIZES,
+    etsyId: "4520555397",
   },
   {
     img: arcadeImg,
@@ -77,6 +90,7 @@ export const pieces: Piece[] = [
     story:
       "Inspired by the quiet engineering behind old arches, the point where architecture and heritage meet and structure becomes beauty. Sacred geometry reimagined through a modern minimalist lens in soft neutral and charcoal tones.",
     sizes: DETAILED_SIZES,
+    etsyId: "4520547991",
   },
   {
     img: heechImg,
@@ -85,6 +99,7 @@ export const pieces: Piece[] = [
     story:
       "Inspired by Parviz Tanavoli, the modern master who spent a lifetime turning heech, the word for nothing, into sculpture, finding in the spirit of Sufi thought that nothingness can hold everything. This is my own conversation with that idea: flowing calligraphy of Heech, where emptiness becomes an open invitation to reflection from every angle.",
     sizes: STANDARD_SIZES,
+    etsyId: "4520551421",
   },
   {
     img: kazehImg,
@@ -93,6 +108,7 @@ export const pieces: Piece[] = [
     story:
       "Inspired by kazheh, an old Kurdish and Persian word for the one who brings you comfort and calm, whom you trust and feel at home with. Here it takes form in layered calligraphy framed by architectural arches, held in a calm, stable blue.",
     sizes: DETAILED_SIZES,
+    etsyId: "4520555804",
   },
   {
     img: clockRoomImg,
@@ -102,6 +118,7 @@ export const pieces: Piece[] = [
     story:
       "Inspired by the pull of somewhere else. Continents rise in gold leaf over oceans cut in five layers of deep blue and teal, and an offset navy face keeps the hour while a pendulum swings below. Handmade, and a working clock.",
     sizes: CLOCK_SIZES,
+    etsyId: "4559821128",
   },
 ];
 

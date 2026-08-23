@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, ExternalLink, Mail } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,7 +9,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { type Piece, CUSTOM_NOTE, orderLink, slugify } from "@/data/pieces";
+import { type Piece, CUSTOM_NOTE, buyLink, orderLink, slugify } from "@/data/pieces";
 
 export default function PieceGrid({ pieces }: { pieces: Piece[] }) {
   const [selected, setSelected] = useState<Piece | null>(null);
@@ -133,11 +133,38 @@ export default function PieceGrid({ pieces }: { pieces: Piece[] }) {
                   </ul>
                 </div>
 
-                <a href={orderLink(selected)} className="mt-auto" data-testid="link-order">
-                  <Button className="w-full rounded-none bg-primary text-primary-foreground hover:bg-foreground uppercase tracking-widest text-sm h-14">
-                    <Mail className="w-4 h-4 mr-2" /> Order / Inquire
-                  </Button>
-                </a>
+                <div className="mt-auto">
+                  {selected.etsyId ? (
+                    <>
+                      <a
+                        href={buyLink(selected)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-testid="link-buy-etsy"
+                      >
+                        <Button className="w-full rounded-none bg-primary text-primary-foreground hover:bg-foreground uppercase tracking-widest text-sm h-14">
+                          Buy on Etsy <ExternalLink className="w-4 h-4 ml-2" />
+                        </Button>
+                      </a>
+                      {/* Etsy only carries the listed sizes, so custom work still
+                          comes straight to Erin. */}
+                      <a
+                        href={orderLink(selected)}
+                        className="mt-4 block text-center font-sans text-xs uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors"
+                        data-testid="link-order"
+                      >
+                        <Mail className="w-3.5 h-3.5 mr-2 inline-block align-[-2px]" />
+                        Custom size? Email the studio
+                      </a>
+                    </>
+                  ) : (
+                    <a href={orderLink(selected)} data-testid="link-order">
+                      <Button className="w-full rounded-none bg-primary text-primary-foreground hover:bg-foreground uppercase tracking-widest text-sm h-14">
+                        <Mail className="w-4 h-4 mr-2" /> Order / Inquire
+                      </Button>
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           )}
