@@ -107,7 +107,7 @@ export default function PieceGrid({ pieces }: { pieces: Piece[] }) {
                 <DialogTitle className="font-serif text-3xl font-light text-foreground mb-4">
                   {selected.name}
                 </DialogTitle>
-                <DialogDescription className="font-sans font-light text-muted-foreground text-sm mb-8 leading-relaxed">
+                <DialogDescription className="font-sans font-light text-muted-foreground text-sm mb-8 leading-relaxed whitespace-pre-line">
                   {selected.story}
                 </DialogDescription>
 

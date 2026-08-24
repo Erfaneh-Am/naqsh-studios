@@ -101,7 +101,7 @@ export const pieces: Piece[] = [
     collection: "Roots Collection",
     name: "Rooted in Grace",
     story:
-      "Inspired by the sarv, the cypress that stays green through the hardest winters and has long stood for endurance and quiet grace. Rooted yet reaching toward light, its branches and layered leaves unfold across architectural planes in rich burgundy and warm natural wood.",
+      "Inspired by the Damask rose, gol-e Mohammadi, a flower woven through Persian gardens, poetry, and memory. A rose grows from hard ground, carries its thorns, moves through every season, and still finds its way to bloom.\n\nHere that rose is built rather than painted: an arching cane and layered leaves unfolding across architectural planes in deep burgundy, gold, and warm natural wood, rooted yet reaching toward light.\n\nFor me this piece is about that kind of strength. Staying rooted in where we come from, carrying the stories that shaped us, and still allowing ourselves to grow into something new.\n\nBecause grace is not about having an easy path. Sometimes, grace is simply continuing to bloom.",
     sizes: STANDARD_SIZES,
     etsyId: "4520555397",
   },
