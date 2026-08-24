@@ -1,6 +1,9 @@
 import arcadeImg from "@assets/arcade_1781333629648.png";
 import heechImg from "@assets/heech_1781333629653.png";
 import sarvImg from "@assets/sarv_1781333629654.png";
+import sarvDiningImg from "@assets/sarv-room-dining.jpg";
+import sarvLivingImg from "@assets/sarv-room-living.jpg";
+import sarvEntryImg from "@assets/sarv-room-entry.jpg";
 import kazehImg from "@assets/EF6BD3BA-F69A-4E6D-919D-359F3307C5A5_1781372629100.png";
 import clockRoomImg from "@assets/worldmap-clock-room.jpg";
 import clockDetailImg from "@assets/worldmap-clock-detail.jpg";
@@ -81,6 +84,7 @@ export function deslugify(slug: string) {
 export const pieces: Piece[] = [
   {
     img: sarvImg,
+    gallery: [sarvDiningImg, sarvLivingImg, sarvEntryImg],
     collection: "Roots Collection",
     name: "Rooted in Grace",
     story:
