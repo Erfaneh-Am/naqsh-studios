@@ -23,23 +23,28 @@ export type Piece = {
   etsyId?: string;
 };
 
+// Priced 2026-08-23 on the standard art formula: (area × rate) + materials, where
+// materials are ~$350 for a 24×36 and the rate is set so a 24×36 returns Erin's
+// $60/hr target after Etsy's cut. Rounded to the nearest hundred.
 export const STANDARD_SIZES: SizeOption[] = [
-  { size: "24″ × 36″", price: "$1,050" },
-  { size: "32″ × 48″", price: "$1,650" },
+  { size: "24″ × 36″", price: "$2,400" },
+  { size: "32″ × 48″", price: "$4,000" },
 ];
 
-// Pieces carrying dense hand-cut detail take far longer to make and sit a tier up.
+// Pieces carrying dense hand-cut detail take far longer to make and sit a tier up:
+// $2.95/in² against $2.37, which is roughly eight extra hours on a 24×36.
 export const DETAILED_SIZES: SizeOption[] = [
-  { size: "24″ × 36″", price: "$1,550" },
-  { size: "32″ × 48″", price: "$2,400" },
+  { size: "24″ × 36″", price: "$2,900" },
+  { size: "32″ × 48″", price: "$4,900" },
 ];
 
 // Clocks carry a movement, brass hands, a pendulum and recessed mounting on top of
-// the same hand-cut layering, so they price above a flat wall piece of equal area.
+// the same hand-cut layering, so they price above a flat wall piece of equal area:
+// the detailed rate plus a $400 hardware allowance.
 export const CLOCK_SIZES: SizeOption[] = [
-  { size: "24″ × 24″", price: "$1,585" },
-  { size: "28″ × 28″", price: "$1,850" },
-  { size: "32″ × 32″", price: "$2,150" },
+  { size: "24″ × 24″", price: "$2,500" },
+  { size: "28″ × 28″", price: "$3,100" },
+  { size: "32″ × 32″", price: "$3,800" },
 ];
 
 export const CUSTOM_NOTE = "Custom size, contact us";
