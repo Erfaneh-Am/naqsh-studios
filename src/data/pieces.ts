@@ -1,4 +1,7 @@
 import arcadeImg from "@assets/arcade_1781333629648.png";
+import geometryDiningImg from "@assets/geometry-room-dining.jpg";
+import geometryLivingImg from "@assets/geometry-room-living.jpg";
+import geometryEntryImg from "@assets/geometry-room-entry.jpg";
 import heechImg from "@assets/heech_1781333629653.png";
 import heechDiningImg from "@assets/heech-room-dining.jpg";
 import heechLivingImg from "@assets/heech-room-living.jpg";
@@ -97,6 +100,7 @@ export const pieces: Piece[] = [
   },
   {
     img: arcadeImg,
+    gallery: [geometryDiningImg, geometryLivingImg, geometryEntryImg],
     collection: "Architecture Collection",
     name: "Geometry in Stillness",
     story:
