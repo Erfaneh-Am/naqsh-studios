@@ -1,5 +1,8 @@
 import arcadeImg from "@assets/arcade_1781333629648.png";
 import heechImg from "@assets/heech_1781333629653.png";
+import heechDiningImg from "@assets/heech-room-dining.jpg";
+import heechLivingImg from "@assets/heech-room-living.jpg";
+import heechEntryImg from "@assets/heech-room-entry.jpg";
 import sarvImg from "@assets/sarv_1781333629654.png";
 import sarvDiningImg from "@assets/sarv-room-dining.jpg";
 import sarvLivingImg from "@assets/sarv-room-living.jpg";
@@ -103,6 +106,7 @@ export const pieces: Piece[] = [
   },
   {
     img: heechImg,
+    gallery: [heechDiningImg, heechLivingImg, heechEntryImg],
     collection: "Poetry Collection",
     name: "The Shape of Nothing",
     story:
