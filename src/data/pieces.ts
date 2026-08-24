@@ -11,6 +11,9 @@ import sarvDiningImg from "@assets/sarv-room-dining.jpg";
 import sarvLivingImg from "@assets/sarv-room-living.jpg";
 import sarvEntryImg from "@assets/sarv-room-entry.jpg";
 import kazehImg from "@assets/EF6BD3BA-F69A-4E6D-919D-359F3307C5A5_1781372629100.png";
+import presenceDaylightImg from "@assets/presence-room-daylight.jpg";
+import presenceDiningImg from "@assets/presence-room-dining.jpg";
+import presenceLivingImg from "@assets/presence-room-living.jpg";
 import clockRoomImg from "@assets/worldmap-clock-room.jpg";
 import clockDetailImg from "@assets/worldmap-clock-detail.jpg";
 import clockStyledImg from "@assets/worldmap-clock-styled.jpg";
@@ -120,6 +123,7 @@ export const pieces: Piece[] = [
   },
   {
     img: kazehImg,
+    gallery: [presenceDaylightImg, presenceDiningImg, presenceLivingImg],
     collection: "Poetry Collection",
     name: "A Presence Like Home",
     story:
