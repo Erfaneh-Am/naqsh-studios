@@ -6,7 +6,6 @@ import heechImg from "@assets/heech_1781333629653.png";
 import heechDiningImg from "@assets/heech-room-dining.jpg";
 import heechLivingImg from "@assets/heech-room-living.jpg";
 import heechEntryImg from "@assets/heech-room-entry.jpg";
-import sarvImg from "@assets/sarv_1781333629654.png";
 import sarvDiningImg from "@assets/sarv-room-dining.jpg";
 import sarvLivingImg from "@assets/sarv-room-living.jpg";
 import sarvEntryImg from "@assets/sarv-room-entry.jpg";
@@ -96,8 +95,11 @@ export function deslugify(slug: string) {
 
 export const pieces: Piece[] = [
   {
-    img: sarvImg,
-    gallery: [sarvDiningImg, sarvLivingImg, sarvEntryImg],
+    // Lead photo matches the Etsy listing's lead photo. The older studio render
+    // predates the finished piece: it misses the gold bloom at the top of the cane
+    // and reads the leaves in wood tone rather than cream.
+    img: sarvDiningImg,
+    gallery: [sarvLivingImg, sarvEntryImg],
     collection: "Roots Collection",
     name: "Rooted in Grace",
     story:
