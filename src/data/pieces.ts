@@ -16,6 +16,17 @@ import presenceLivingImg from "@assets/presence-room-living.jpg";
 import clockRoomImg from "@assets/worldmap-clock-room.jpg";
 import clockDetailImg from "@assets/worldmap-clock-detail.jpg";
 import clockStyledImg from "@assets/worldmap-clock-styled.jpg";
+import spaceBetweenLivingImg from "@assets/space-between-room-living.jpg";
+import spaceBetweenLampImg from "@assets/space-between-room-lamp.jpg";
+import spaceBetweenPieceImg from "@assets/space-between-piece.png";
+import heldInBalanceWindowImg from "@assets/held-in-balance-room-window.jpg";
+import heldInBalanceArchImg from "@assets/held-in-balance-room-arch.jpg";
+import heldInBalancePieceImg from "@assets/held-in-balance-piece.png";
+import whereLightRestsConsoleImg from "@assets/where-light-rests-room-console.jpg";
+import whereLightRestsBooksImg from "@assets/where-light-rests-room-books.jpg";
+import whereLightRestsPieceImg from "@assets/where-light-rests-piece.png";
+import threadOfLightTrioImg from "@assets/thread-of-light-trio.jpg";
+import threadOfLightTrioWideImg from "@assets/thread-of-light-trio-wide.jpg";
 
 export type SizeOption = { size: string; price: string };
 
@@ -60,6 +71,20 @@ export const CLOCK_SIZES: SizeOption[] = [
   { size: "24″ × 24″", price: "$1,800" }, // 750 + 25h
   { size: "28″ × 28″", price: "$2,200" }, // 750 + 34h
   { size: "32″ × 32″", price: "$2,600" }, // 750 + 45h
+];
+
+// A Thread of Light trio (added 2026-09-11). Sizes and prices set directly
+// by Erin; they sit below the hours formula, priced as an entry point.
+export const THREAD_SIZES: SizeOption[] = [
+  { size: "16″ × 24″", price: "$700" },
+  { size: "20″ × 30″", price: "$1,000" },
+];
+
+// The set is one of each piece at the chosen size, at roughly 10% under
+// three singles, rounded to the hundred.
+export const THREAD_TRIO_SIZES: SizeOption[] = [
+  { size: "16″ × 24″ each", price: "$1,900" }, // 3 × 700 = 2,100
+  { size: "20″ × 30″ each", price: "$2,700" }, // 3 × 1,000 = 3,000
 ];
 
 export const CUSTOM_NOTE = "Custom size, contact us";
@@ -147,6 +172,42 @@ export const pieces: Piece[] = [
     sizes: CLOCK_SIZES,
     etsyId: "4559821128",
   },
+  {
+    img: spaceBetweenLivingImg,
+    gallery: [spaceBetweenLampImg, spaceBetweenPieceImg],
+    collection: "A Thread of Light",
+    name: "The Space Between",
+    story:
+      "Inspired by the quiet tension between a curve and a straight line. Broad forms in teal, sage, and gold hold their distance while a fine gold line keeps the rhythm between them. From across the room it reads as color and balance; up close, the layers become the story.",
+    sizes: THREAD_SIZES,
+  },
+  {
+    img: heldInBalanceWindowImg,
+    gallery: [heldInBalanceArchImg, heldInBalancePieceImg],
+    collection: "A Thread of Light",
+    name: "Held in Balance",
+    story:
+      "Inspired by the balance between a fine ornamental line and broad planes of color. A delicate teal medallion rests over calm fields of sage and blue, grounded by a warm touch of gold. Every form gets room to breathe.",
+    sizes: THREAD_SIZES,
+  },
+  {
+    img: whereLightRestsConsoleImg,
+    gallery: [whereLightRestsBooksImg, whereLightRestsPieceImg],
+    collection: "A Thread of Light",
+    name: "Where Light Rests",
+    story:
+      "Inspired by the stillness of a circle against an open ground. A broad teal disc anchors the piece, and small gold details give the eye somewhere to rest. The textured surfaces add depth the longer you look.",
+    sizes: THREAD_SIZES,
+  },
+  {
+    img: threadOfLightTrioImg,
+    gallery: [threadOfLightTrioWideImg],
+    collection: "A Thread of Light",
+    name: "A Thread of Light: The Trio",
+    story:
+      "Inspired by the conversation between repeated colors and changing forms. The full set: The Space Between, Held in Balance, and Where Light Rests, one shared palette of teal, sage, and gold with three different focal points. Hang them together, or let their colors connect neighboring rooms. Includes one of each artwork at the chosen size.",
+    sizes: THREAD_TRIO_SIZES,
+  },
 ];
 
 // Display order for collection listings / filters.
@@ -154,6 +215,7 @@ export const collectionOrder = [
   "Roots Collection",
   "Architecture Collection",
   "Poetry Collection",
+  "A Thread of Light",
   "Clocks",
 ];
 
