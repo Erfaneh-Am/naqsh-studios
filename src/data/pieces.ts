@@ -178,7 +178,7 @@ export const pieces: Piece[] = [
     collection: "A Thread of Light",
     name: "The Space Between",
     story:
-      "Inspired by the quiet tension between a curve and a straight line. Broad forms in teal, sage, and gold hold their distance while a fine gold line keeps the rhythm between them. From across the room it reads as color and balance; up close, the layers become the story.",
+      "Broad forms in teal, sage, and gold hold their distance while a fine gold line keeps the rhythm between them. From across the room it reads as color and balance; up close, the layers become the story.",
     sizes: THREAD_SIZES,
   },
   {
@@ -187,7 +187,7 @@ export const pieces: Piece[] = [
     collection: "A Thread of Light",
     name: "Held in Balance",
     story:
-      "Inspired by the balance between a fine ornamental line and broad planes of color. A delicate teal medallion rests over calm fields of sage and blue, grounded by a warm touch of gold. Every form gets room to breathe.",
+      "A delicate teal medallion rests over calm fields of sage and blue, grounded by a warm touch of gold. Every form gets room to breathe.",
     sizes: THREAD_SIZES,
   },
   {
@@ -196,7 +196,7 @@ export const pieces: Piece[] = [
     collection: "A Thread of Light",
     name: "Where Light Rests",
     story:
-      "Inspired by the stillness of a circle against an open ground. A broad teal disc anchors the piece, and small gold details give the eye somewhere to rest. The textured surfaces add depth the longer you look.",
+      "A broad teal disc anchors the piece, and small gold details give the eye somewhere to rest. The textured surfaces add depth the longer you look.",
     sizes: THREAD_SIZES,
   },
   {
@@ -205,7 +205,7 @@ export const pieces: Piece[] = [
     collection: "A Thread of Light",
     name: "A Thread of Light: The Trio",
     story:
-      "Inspired by the conversation between repeated colors and changing forms. The full set: The Space Between, Held in Balance, and Where Light Rests, one shared palette of teal, sage, and gold with three different focal points. Hang them together, or let their colors connect neighboring rooms. Includes one of each artwork at the chosen size.",
+      "The full set: The Space Between, Held in Balance, and Where Light Rests, one shared palette of teal, sage, and gold with three different focal points. Hang them together, or let their colors connect neighboring rooms. Includes one of each artwork at the chosen size.",
     sizes: THREAD_TRIO_SIZES,
   },
 ];

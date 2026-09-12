@@ -1,0 +1,34 @@
+name: Deploy preview to Cloudflare Pages
+
+# Anything pushed to the `preview` branch deploys to the non-production
+# branch alias: https://preview.naqsh-studios.pages.dev
+# The public site (www) only changes on pushes to `main`.
+on:
+  push:
+    branches: [preview]
+  workflow_dispatch:
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Deploy preview to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=naqsh-studios --branch=preview
