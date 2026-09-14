@@ -11,17 +11,26 @@ export default function Collections() {
     ? collectionNames.find((name) => slugify(name) === slug) ?? null
     : null;
 
+  // "Wall Sculptures" is the homepage grouping for every wall piece: all
+  // collections except Clocks. It is a view, not a collection of its own.
+  const isWallSculptures = slug === "wall-sculptures";
+
   // A slug that matches no real collection (e.g. an upcoming product line) →
   // show that collection's name with an empty "coming soon" state, not the full catalog.
-  const unmatchedSlug = slug && !activeCollection ? deslugify(slug) : null;
+  const unmatchedSlug =
+    slug && !activeCollection && !isWallSculptures ? deslugify(slug) : null;
 
-  const shown = activeCollection
-    ? pieces.filter((p) => p.collection === activeCollection)
-    : slug
-      ? []
-      : pieces;
+  const shown = isWallSculptures
+    ? pieces.filter((p) => p.collection !== "Clocks")
+    : activeCollection
+      ? pieces.filter((p) => p.collection === activeCollection)
+      : slug
+        ? []
+        : pieces;
 
-  const heading = activeCollection ?? unmatchedSlug ?? "The Collections";
+  const heading = isWallSculptures
+    ? "Wall Sculptures"
+    : activeCollection ?? unmatchedSlug ?? "The Collections";
   const eyebrow = slug ? "Collection" : "Full Catalog";
 
   return (
@@ -45,7 +54,7 @@ export default function Collections() {
           <Link
             href="/collections"
             className={`px-5 py-2 text-xs uppercase tracking-[0.2em] border transition-colors ${
-              !activeCollection
+              !activeCollection && !isWallSculptures
                 ? "border-accent text-accent"
                 : "border-border text-muted-foreground hover:border-accent hover:text-accent"
             }`}
